@@ -1,0 +1,19 @@
+FROM node:lts-alpine
+
+# make the 'app' folder the current working directory
+WORKDIR /app
+
+# copy both 'package.json' and 'package-lock.json'
+COPY package*.json ./
+
+# install project dependencies
+RUN npm install
+
+# copy project files and folders to the current working directory
+COPY . .
+
+# expose port 
+EXPOSE 8080
+
+# Start the development server
+CMD ["npm", "run", "dev"]
