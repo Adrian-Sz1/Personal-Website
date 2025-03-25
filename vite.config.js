@@ -11,6 +11,7 @@ export default defineConfig({
     vueDevTools(),
   ],
   server: {
+    allowedHosts: 'adrianszoszkiewicz-dev-677809996651.europe-west2.run.app',
     host: true,
     port: 5173,
   },
