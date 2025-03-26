@@ -1,16 +1,19 @@
-FROM node:lts-alpine
+# Build
+FROM node:lts-alpine AS builder
 
-# make the 'app' folder the current working directory
 WORKDIR /app
 
-# copy both 'package.json' and 'package-lock.json'
 COPY package*.json ./
 
-# install project dependencies
 RUN npm install
 
-# copy project files and folders to the current working directory
 COPY . .
 
-# build app for production with minification
 RUN npm run build
+
+# Serve
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80
