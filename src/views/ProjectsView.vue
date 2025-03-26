@@ -1,13 +1,17 @@
+<script setup>
+import TheProjects from '../components/TheProjects.vue';
+</script>
+
 <template>
-  <div class="projects">
-    <h1>This is a projects page</h1>
-  </div>
+  <main>
+    <TheProjects />
+  </main>
 </template>
 
 <style>
 @media (min-width: 1024px) {
   .projects {
-    min-height: 100vh;
+    min-height: 1000vh;
     display: flex;
     align-items: center;
   }
