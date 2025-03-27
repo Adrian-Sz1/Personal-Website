@@ -1,14 +1,16 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/NavBar.vue'
+import UnderConstructionView from './components/UnderConstructionView.vue';
 </script>
 
 <template>
-  <header>
+   <UnderConstructionView></UnderConstructionView>
+  <!-- <header>
     <img alt="Vue logo" class="logo" src="../src/assets/profile-pic.jpg" width="125" height="125"/>
 
     <div class="wrapper">
-      <HelloWorld msg="Adrian Szoszkiewicz" />
+      <HelloWorld></HelloWorld>
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -20,7 +22,7 @@ import HelloWorld from './components/NavBar.vue'
     </div>
   </header>
 
-  <RouterView />
+  <RouterView /> -->
   <footer>
       <p>&copy; 2025 Adrian Szoszkiewicz</p>
   </footer>
