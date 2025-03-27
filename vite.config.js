@@ -13,8 +13,8 @@ export default defineConfig(({ mode }) => {
     return {
       plugins: [vue(), vueDevTools()],
       server: {
-        port: parseInt(env.VUE_APP_PORT),
-        host: env.VUE_APP_HOST,
+        port: 5173,
+        host: 'localhost',
       },
       resolve: {
         alias: {
