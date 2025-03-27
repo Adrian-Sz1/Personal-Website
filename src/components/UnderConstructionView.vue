@@ -1,6 +1,7 @@
 <template>
     <div class="construction-page">
       <div class="content">
+        <img id="crane-img" class="filter-green" src="../assets/crane.svg" alt="Crane" />
         <h1 class="green">Under Construction</h1>
         <p>I am working hard to bring you an amazing experience.</p>
         <p>Please check back soon!</p>
@@ -33,6 +34,11 @@
   </script>
   
   <style scoped>
+  #crane-img {
+    width: 150px;
+    height: 150px;
+    pointer-events: none;
+  }
   .construction-page {
     display: flex;
     justify-content: center;
