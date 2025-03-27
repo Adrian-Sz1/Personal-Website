@@ -74,7 +74,8 @@ img {
     place-items: center;
     padding: calc(var(--section-gap) / 20);
     background-color: #222222;
-    border-radius: 5%;
+    border: #222222 1px solid;
+    border-radius: 15px;
   }
 
   .logo {
