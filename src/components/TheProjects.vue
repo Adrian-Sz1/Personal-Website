@@ -14,10 +14,11 @@ const openReadmeInEditor = () => fetch('/__open-in-editor?file=README.md')
     <template #icon>
       <DocumentationIcon />
     </template>
-    <template #heading>Steam User Scraper</template>
+    <template #heading>
+      <a href="https://github.com/Adrian-Sz1/SteamScraper" target="_blank" rel="noopener">Steam User Scraper</a>
+    </template>
 
     A fairly simple program that scrapes a user's Steam profile and returns their information. It uses Steam's API to communicate. Check out the repo for more info.
-    <a href="https://github.com/Adrian-Sz1/SteamScraper" target="_blank" rel="noopener">Steam User Scraper Repository</a>
   </WelcomeItem>
 
   <WelcomeItem>

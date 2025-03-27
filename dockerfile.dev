@@ -1,19 +1,23 @@
-FROM node:lts-alpine
+# Build
+FROM node:lts-alpine AS builder
 
-# make the 'app' folder the current working directory
 WORKDIR /app
 
-# copy both 'package.json' and 'package-lock.json'
 COPY package*.json ./
 
-# install project dependencies
 RUN npm install
 
-# copy project files and folders to the current working directory
 COPY . .
 
-# expose port 
-EXPOSE 8080
+ARG VUE_APP_HOST
 
-# Start the development server
-CMD ["npm", "run", "dev"]
+ENV VUE_APP_HOST=$VUE_APP_HOST
+
+RUN npm run build
+
+# Serve
+FROM nginx:alpine
+
+COPY --from=builder /app/dist /usr/share/nginx/html
+
+EXPOSE 80

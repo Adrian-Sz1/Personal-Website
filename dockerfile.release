@@ -9,7 +9,11 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+ARG VUE_APP_HOST
+
+ENV VUE_APP_HOST=$VUE_APP_HOST
+
+RUN npm run release
 
 # Serve
 FROM nginx:alpine

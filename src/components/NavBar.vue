@@ -6,10 +6,18 @@ defineProps({
   },
 })
 </script>
-
+<script>
+export default {
+  computed: {
+    title() {
+      return import.meta.env.VITE_APP_TITLE;
+    },
+  },
+};
+</script>
 <template>
   <div class="greetings">
-    <h1 class="green">Adrian Szoszkiewicz</h1>
+    <h1 class="green">{{title}}</h1>
   </div>
 </template>
 
