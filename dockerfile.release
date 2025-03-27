@@ -9,7 +9,13 @@ RUN npm install
 
 COPY . .
 
-RUN npm run build
+ARG VITE_APP_HOST
+ARG VITE_APP_PORT
+
+ENV VITE_APP_HOST=$VITE_APP_HOST
+ENV VITE_APP_PORT=$VITE_APP_PORT
+
+RUN npm run release
 
 # Serve
 FROM nginx:alpine

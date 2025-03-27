@@ -3,13 +3,13 @@ defineProps({
   msg: {
     type: String,
     required: true,
-  },
+  }
 })
 </script>
 
 <template>
   <div class="greetings">
-    <h1 class="green">Adrian Szoszkiewicz</h1>
+    <h1 class="green">{{msg}}</h1>
   </div>
 </template>
 
