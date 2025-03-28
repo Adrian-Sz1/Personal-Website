@@ -6,28 +6,13 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
-  const env = process.env;
-  console.log(env);
-  if (mode === 'local-dev') {
-    console.log(mode + ' ' + env.VUE_APP_PORT + ' ' + env.VUE_APP_HOST);
+  const env = process.env
+  const envMode = env.VITE_APP_MODE
+  if (envMode === 'local-dev') {
     return {
       plugins: [vue(), vueDevTools()],
       server: {
-        port: 5173,
-        host: 'localhost',
-      },
-      resolve: {
-        alias: {
-          '@': fileURLToPath(new URL('./src', import.meta.url))
-        },
-      },
-    };
-  } else if (mode === 'development') {
-    console.log(mode);
-    return {
-      plugins: [vue(), vueDevTools()],
-      server: {
-        port: parseInt(env.VUE_APP_PORT) || 80,
+        port: env.VUE_APP_PORT,
         host: env.VUE_APP_HOST,
       },
       resolve: {
@@ -36,12 +21,26 @@ export default defineConfig(({ mode }) => {
         },
       },
     };
-  } else if (mode === 'release') {
+  } else if (envMode === 'development') {
+    console.log(envMode);
+    return {
+      plugins: [vue(), vueDevTools()],
+      server: {
+        port: parseInt(env.VUE_APP_PORT) || 80, // TODO: Replace VUE_APP_PORT with VITE_APP_PORT and add in GCP yaml file
+        host: env.VUE_APP_HOST, // TODO: Replace VUE_APP_HOST with VITE_APP_HOST and add in GCP yaml file
+      },
+      resolve: {
+        alias: {
+          '@': fileURLToPath(new URL('./src', import.meta.url))
+        },
+      },
+    };
+  } else if (envMode === 'release') {
     return {
       plugins: [vue()],
       server: {
-        port: parseInt(env.VUE_APP_PORT) || 80,
-        host: env.VUE_APP_HOST,
+        port: parseInt(env.VUE_APP_PORT) || 80, // TODO: Replace VUE_APP_PORT with VITE_APP_PORT and add in GCP yaml file
+        host: env.VUE_APP_HOST, // TODO: Replace VUE_APP_HOST with VITE_APP_HOST and add in GCP yaml file
       },
     };
     // else throw some error
