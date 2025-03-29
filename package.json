@@ -4,15 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite --mode local-dev",
-    "build": "vite build --mode development",
-    "release": "vite build --mode release",
+    "dev": "vite",
+    "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
     "vue": "^3.5.13",
     "vue-router": "^4.5.0"
   },
