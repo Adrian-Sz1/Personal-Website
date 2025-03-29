@@ -55,7 +55,7 @@ npm run lint
 The website is containerized using Docker and deployed on Google Cloud Run using GCP triggers, it is deployed across two environments:
 
 * **Release:** Served using Nginx on Google Cloud Run for public access acting as the stable production website for users to see and interact with.
-* **UAT/Testing:** A separate server (inaccessible to the public through the use of GCP IAM authentication) used for testing and staging updates before deployment to release.
+* **Staging:** A separate server (inaccessible to the public through the use of GCP IAM authentication) used for testing and staging updates before deployment to release.
 
 ## Usage
 
