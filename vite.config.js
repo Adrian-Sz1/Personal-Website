@@ -3,17 +3,23 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import dotenv from 'dotenv'
 
+dotenv.config()
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
-  const env = process.env
+export default defineConfig(() => {
+  const env = process.env;
   const envMode = env.VITE_APP_MODE
+  const envPort = env.VITE_APP_PORT
+  const envHost = env.VITE_APP_HOST
+  
   if (envMode === 'local-dev') {
+    console.log(envMode + " @ " + envHost + ":" + envPort);
     return {
       plugins: [vue(), vueDevTools()],
       server: {
-        port: env.VUE_APP_PORT,
-        host: env.VUE_APP_HOST,
+        port: envPort,
+        host: envHost,
       },
       resolve: {
         alias: {
@@ -22,12 +28,12 @@ export default defineConfig(({ mode }) => {
       },
     };
   } else if (envMode === 'development') {
-    console.log(envMode);
+    console.log(envMode + " @ " + envHost + ":" + envPort);
     return {
       plugins: [vue(), vueDevTools()],
       server: {
-        port: parseInt(env.VUE_APP_PORT) || 80, // TODO: Replace VUE_APP_PORT with VITE_APP_PORT and add in GCP yaml file
-        host: env.VUE_APP_HOST, // TODO: Replace VUE_APP_HOST with VITE_APP_HOST and add in GCP yaml file
+        port: envPort,
+        host: envHost,
       },
       resolve: {
         alias: {
@@ -36,13 +42,14 @@ export default defineConfig(({ mode }) => {
       },
     };
   } else if (envMode === 'release') {
+    console.log(envMode + " @ " + envHost + ":" + envPort);
     return {
       plugins: [vue()],
       server: {
-        port: parseInt(env.VUE_APP_PORT) || 80, // TODO: Replace VUE_APP_PORT with VITE_APP_PORT and add in GCP yaml file
-        host: env.VUE_APP_HOST, // TODO: Replace VUE_APP_HOST with VITE_APP_HOST and add in GCP yaml file
+        port: envPort,
+        host: envHost,
       },
     };
-    // else throw some error
-  }
+  } 
+  throw new Error(`Invalid VITE_APP_MODE: ${envMode}`);
 });
