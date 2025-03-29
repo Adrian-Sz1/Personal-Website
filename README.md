@@ -1,4 +1,4 @@
-# Adrian Szoszkiewicz - Personal Website
+# Personal Website
 
 This repository contains the source code for my personal website, designed to showcase my portfolio, CV, and other relevant information about myself.
 
