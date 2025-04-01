@@ -3,18 +3,23 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import dotenv from 'dotenv'
 
+dotenv.config()
 // https://vite.dev/config/
-export default defineConfig(({ mode }) => {
+export default defineConfig(() => {
   const env = process.env;
-  console.log(env);
-  if (mode === 'local-dev') {
-    console.log(mode + ' ' + env.VUE_APP_PORT + ' ' + env.VUE_APP_HOST);
+  const envMode = env.VITE_APP_MODE
+  const envPort = env.VITE_APP_PORT
+  const envHost = env.VITE_APP_HOST
+  
+  if (envMode === 'local-dev') {
+    console.log(envMode + " @ " + envHost + ":" + envPort);
     return {
       plugins: [vue(), vueDevTools()],
       server: {
-        port: 5173,
-        host: 'localhost',
+        port: envPort,
+        host: envHost,
       },
       resolve: {
         alias: {
@@ -22,13 +27,13 @@ export default defineConfig(({ mode }) => {
         },
       },
     };
-  } else if (mode === 'development') {
-    console.log(mode);
+  } else if (envMode === 'development') {
+    console.log(envMode + " @ " + envHost + ":" + envPort);
     return {
       plugins: [vue(), vueDevTools()],
       server: {
-        port: parseInt(env.VUE_APP_PORT) || 80,
-        host: env.VUE_APP_HOST,
+        port: envPort,
+        host: envHost,
       },
       resolve: {
         alias: {
@@ -36,14 +41,15 @@ export default defineConfig(({ mode }) => {
         },
       },
     };
-  } else if (mode === 'release') {
+  } else if (envMode === 'release') {
+    console.log(envMode + " @ " + envHost + ":" + envPort);
     return {
       plugins: [vue()],
       server: {
-        port: parseInt(env.VUE_APP_PORT) || 80,
-        host: env.VUE_APP_HOST,
+        port: envPort,
+        host: envHost,
       },
     };
-    // else throw some error
-  }
+  } 
+  throw new Error(`Invalid VITE_APP_MODE: ${envMode}`);
 });

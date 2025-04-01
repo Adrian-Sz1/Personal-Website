@@ -1,17 +1,27 @@
-# Personal-Website
+# Personal Website
 
-This template should help get you started developing with Vue 3 in Vite.
+This repository contains the source code for my personal website, designed to showcase my portfolio, CV, and other relevant information about myself.
 
-## Recommended IDE Setup
+## Purpose
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+The primary purpose of this website is to:
 
-## Customize configuration
+* Provide a centralized location for my professional portfolio.
+* Display my CV and relevant experience.
+* Offer easy access to my contact information.
+* Present my skills and projects in a clear and engaging manner.
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## Technologies Used
+
+* **Frontend:**
+    * Vue.js
+      
+* **Deployment:**
+    * Docker: For containerization of the application.
+    * Google Cloud Run: For containerized deployment.
+    * Nginx: Used as the production web server and serves the website.
 
 ## Project Setup
-
 ```sh
 npm install
 ```
@@ -39,3 +49,14 @@ npm run test:unit
 ```sh
 npm run lint
 ```
+
+## Deployment
+
+The website is containerized using Docker and deployed on Google Cloud Run using GCP triggers, it is deployed across two environments:
+
+* **Release:** Served using Nginx on Google Cloud Run for public access acting as the stable production website for users to see and interact with.
+* **Staging:** A separate server (inaccessible to the public through the use of GCP IAM authentication) used for testing and staging updates before deployment to release.
+
+## Usage
+
+To view the website, simply visit [adrianszoszkiewicz.com](https://adrianszoszkiewicz.com).
