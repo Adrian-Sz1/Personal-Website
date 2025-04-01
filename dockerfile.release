@@ -15,7 +15,7 @@ ARG VITE_APP_PORT
 ENV VITE_APP_HOST=$VITE_APP_HOST
 ENV VITE_APP_PORT=$VITE_APP_PORT
 
-RUN npm run release
+RUN npm run build
 
 # Serve
 FROM nginx:alpine
