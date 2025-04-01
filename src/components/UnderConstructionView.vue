@@ -34,6 +34,10 @@
   </script>
   
   <style scoped>
+  * {
+    z-index: 1000;
+  }
+
   #crane-img {
     width: 150px;
     height: 150px;
