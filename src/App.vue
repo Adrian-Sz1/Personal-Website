@@ -2,10 +2,14 @@
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/NavBar.vue'
 import UnderConstructionView from './components/UnderConstructionView.vue';
+import Particles from './components/Particles.vue';
 </script>
 
 <template>
-   <UnderConstructionView></UnderConstructionView>
+  <div style="display: flexbox;">
+    <Particles/>
+    <UnderConstructionView/>
+
   <!-- <header>
     <img alt="Vue logo" class="logo" src="../src/assets/profile-pic.jpg" width="125" height="125"/>
 
@@ -26,9 +30,19 @@ import UnderConstructionView from './components/UnderConstructionView.vue';
   <footer>
       <p>&copy; 2025 Adrian Szoszkiewicz</p>
   </footer>
+</div>
+
 </template>
 
 <style scoped>
+
+footer, p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
