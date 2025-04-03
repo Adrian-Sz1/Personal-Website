@@ -1,33 +1,35 @@
 <script setup>
-defineProps({
-    urlLink: {
-        type: String,
-        required: false
-    },
-    dateRange: {
-        type: String,
-        required: false
-    },
-    header: {
-        type: String,
-        required: true,
-    },
-    subHeader: {
-        type: String,
-        required: false
-    },
-    desc: {
-        type: String,
-        required: true
-    },
-    technologyList: {
-        type: Array,
-        required: true,
-        validator: (value) => {
-            return value.every(item => typeof item === 'string');
-        }
-    }
+import { sortTechnologies } from './technologyUtils';
+
+const props = defineProps({
+  urlLink: {
+    type: String,
+    required: false,
+  },
+  dateRange: {
+    type: String,
+    required: false,
+  },
+  header: {
+    type: String,
+    required: true,
+  },
+  subHeader: {
+    type: String,
+    required: false,
+  },
+  desc: {
+    type: String,
+    required: true,
+  },
+  technologyList: {
+    type: Array,
+    required: true,
+    validator: (value) => value.every((item) => typeof item === 'string'),
+  },
 });
+
+const sortedTechnologyList = sortTechnologies(props.technologyList);
 </script>
 
 <template>
@@ -44,7 +46,7 @@ defineProps({
                 <p>{{desc}}</p>
                 <div id="out-skills-container">
                     <ul id="skills-container">
-                        <li class="mint-pill-medium" v-for="technology in technologyList" :key="technology">
+                        <li class="mint-pill-medium" v-for="technology in sortedTechnologyList" :key="technology">
                             {{ technology }}
                         </li>
                     </ul>

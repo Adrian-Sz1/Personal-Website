@@ -20,15 +20,12 @@ const downloadPdf = () => {
     <img alt="Vue logo" class="logo" src="../src/assets/profile-pic.jpg" width="125" height="125"/>
 
     <div class="wrapper">
-      <!-- <HelloWorld></HelloWorld> -->
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/experience">Experience</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
-        <a @click="downloadPdf">Download My CV</a>
-        <!-- <RouterLink to="/cv" target="_blank">CV</RouterLink> -->
+        <a @click="downloadPdf">CV Download</a>
       </nav>
     </div>
   </header>
