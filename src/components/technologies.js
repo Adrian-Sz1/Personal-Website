@@ -40,6 +40,7 @@ export const TECHNOLOGIES = {
         TEAM_CITY: "Team City",
     },
     TESTING: {
+        PLAYWRIGHT: "Playwright",
         SELENIUM: "Selenium"
     },
     MONITORING: {
