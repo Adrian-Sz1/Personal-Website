@@ -3,14 +3,15 @@
 #app {
   padding: 2rem;
   font-weight: normal;
+  font-family: "Roboto";
 }
 
 a,
 .green {
   text-decoration: none;
-  color: #00bd7e;
+  color: rgb(0, 189, 126);
   transition: 0.4s;
-  padding: 3px;
+  /* padding: 3px; */
 }
 
 @media (hover: hover) {
@@ -26,4 +27,38 @@ a,
     grid-template-columns: 1fr 1fr;
     padding: 2rem 2rem;
   }
+}
+.mint-pill-light {
+  background-color: rgba(200, 255, 235, 0.25);
+  color: rgba(100, 200, 170, 0.8);
+}
+
+.mint-pill-medium {
+  cursor: default;
+  background-color: rgba(140, 167, 158, 0.15); /* Your primary mint with lower alpha */
+  color: rgba(214, 234, 229, 0.8);
+}
+
+.mint-pill-dark {
+  background-color: rgba(100, 200, 170, 0.2);
+  color: rgba(100, 200, 170, 0.8);
+}
+
+.mint-pill-semi {
+  background-color: rgba(170, 255, 220, 0.5);
+  color: rgba(40, 150, 120, 1); /* Darker text */
+}
+
+li {
+  list-style-type: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  transition: 0.4s;
+  box-shadow: 1rem;
+  margin: 2rem 0.5rem;
+}
+li:hover {
+  list-style-type: none;
+  border-radius: 15px;
 }

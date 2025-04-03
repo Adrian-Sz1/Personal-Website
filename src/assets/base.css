@@ -19,6 +19,21 @@
   --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
   --vt-c-text-dark-1: var(--vt-c-white);
   --vt-c-text-dark-2: rgba(235, 235, 235, 0.64);
+
+  --pill-color-red: #ef8a8ab9;
+  --pill-color-red-mute: #782b2b;
+
+  --content-box-title-color-highlight: rgb(5, 240, 185);
+  --content-box-title-color: rgb(0, 189, 126);
+
+  --content-box-subheader-color: rgba(129, 176, 160, 0.79);
+
+  --content-box-date-color:rgb(201, 215, 210);
+  --content-box-desc-color:rgb(201, 215, 210);
+  
+  --content-box-title-size: 1.65em;
+  --content-box-title-size-mobile: 1.5em;
+
 }
 
 /* semantic color variables for this project */
@@ -58,6 +73,15 @@
   font-weight: normal;
 }
 
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("`fonts/Roboto-Variable.ttf"), url("fonts/Roboto-Variable.ttf");
+}
+
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -67,6 +91,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    "Roboto",
     Inter,
     -apple-system,
     BlinkMacSystemFont,

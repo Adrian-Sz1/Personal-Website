@@ -1,32 +1,43 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/NavBar.vue'
-import UnderConstructionView from './components/UnderConstructionView.vue';
 import Particles from './components/Particles.vue';
+const pdfUrl = '/Adrian_Szoszkiewicz_CV_2025.pdf';
+
+const downloadPdf = () => {
+  const link = document.createElement('a');
+  link.href = pdfUrl;
+  link.download = 'Adrian-Szoszkiewicz-CV-2025.pdf';
+  link.click();
+};
 </script>
 
 <template>
-  <div style="display: flexbox;">
+  <div>
     <Particles/>
-    <UnderConstructionView/>
-
-  <!-- <header>
+    <!-- <UnderConstructionView/> -->
+    <!-- <TheProjects/> -->
+  <header>
     <img alt="Vue logo" class="logo" src="../src/assets/profile-pic.jpg" width="125" height="125"/>
 
     <div class="wrapper">
-      <HelloWorld></HelloWorld>
+      <!-- <HelloWorld></HelloWorld> -->
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About Me</RouterLink>
-        <RouterLink to="/projects">My Projects</RouterLink>
-        <RouterLink to="/cv">My CV</RouterLink>
-
+        <RouterLink to="/about">About</RouterLink>
+        <RouterLink to="/experience">Experience</RouterLink>
+        <RouterLink to="/projects">Projects</RouterLink>
+        <a @click="downloadPdf">Download My CV</a>
+        <!-- <RouterLink to="/cv" target="_blank">CV</RouterLink> -->
       </nav>
     </div>
   </header>
 
-  <RouterView /> -->
+  <router-view v-slot="{ Component }">
+    <transition name="scale" mode="out-in">
+      <component :is="Component"/>
+    </transition>
+  </router-view>
   <footer>
       <p>&copy; 2025 Adrian Szoszkiewicz</p>
   </footer>
@@ -81,6 +92,17 @@ nav a:first-of-type {
 img {
   border-radius: 50%;
 }
+.scale-enter-active,
+.scale-leave-active {
+  transition: all 0.2s ease-in;
+}
+
+.scale-enter-from,
+.scale-leave-to {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
 
 @media (min-width: 1024px) {
   header {
@@ -104,11 +126,7 @@ img {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
   }
 
   footer {
