@@ -79,7 +79,7 @@
   font-style: normal;
   font-display: auto;
   unicode-range: U+000-5FF;
-  src: local("Roboto"), url("`fonts/Roboto-Variable.ttf"), url("fonts/Roboto-Variable.ttf");
+  src: local("Roboto"), url("/fonts/Roboto-Variable.ttf"), url("/fonts/Roboto-Variable.ttf");
 }
 
 body {
