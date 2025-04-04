@@ -1,6 +1,13 @@
-import { fileURLToPath } from 'node:url'
-import { mergeConfig, defineConfig, configDefaults } from 'vitest/config'
-import viteConfig from './vite.config'
+// vitest.config.js
+import { fileURLToPath } from 'node:url';
+import { mergeConfig, defineConfig, configDefaults } from 'vitest/config';
+import { createViteConfig } from './vite.config';
+import dotenv from 'dotenv';
+
+dotenv.config();
+
+const env = process.env;
+const viteConfig = createViteConfig(env);
 
 export default mergeConfig(
   viteConfig,
@@ -11,4 +18,4 @@ export default mergeConfig(
       root: fileURLToPath(new URL('./', import.meta.url)),
     },
   }),
-)
+);

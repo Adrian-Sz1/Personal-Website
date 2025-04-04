@@ -10,6 +10,10 @@ const particlesLoaded = async container => {
             id="tsparticles"
             :particlesLoaded="particlesLoaded"
             :options="{
+                    fullScreen: {
+                        enable: true,
+                        zIndex: -10
+                    },
                     background: {
                         color: {
                             value: '#181818'
@@ -43,7 +47,7 @@ const particlesLoaded = async container => {
                             }
                         },
                         detect_on: {
-                            type: 'window'
+                            type: 'canvas'
                         }
                     },
                     particles: {
@@ -87,6 +91,5 @@ const particlesLoaded = async container => {
     </div>
   </template>
 
-<style>
-
+<style scoped>
 </style>

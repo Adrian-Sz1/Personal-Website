@@ -1,19 +1,10 @@
 <script setup>
-import TheProjects from '../components/TheProjects.vue';
+import Projects from '../components/ProjectsList.vue';
 </script>
 
 <template>
-  <main>
-    <TheProjects />
-  </main>
+  <Projects/>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .projects {
-    min-height: 1000vh;
-    display: flex;
-    align-items: center;
-  }
-}
+<style scoped>
 </style>
