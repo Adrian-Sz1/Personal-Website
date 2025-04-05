@@ -127,8 +127,8 @@ nav a.router-link-exact-active:hover {
     flex-direction: row;
     justify-content: space-between;
     height: auto;
+    max-height: 9%;
     padding: 0.5rem;
-    position: relative;
   }
 
   .hamburger {
