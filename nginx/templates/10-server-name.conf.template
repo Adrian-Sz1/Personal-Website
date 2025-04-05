@@ -8,7 +8,7 @@ server {
 }
 
 server {
-    listen 443 ssl;
+    listen 443;
     server_name ${VITE_APP_HOST};
 
     root /usr/share/nginx/html;
