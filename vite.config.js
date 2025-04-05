@@ -3,8 +3,13 @@ import { fileURLToPath, URL } from 'node:url';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import vueDevTools from 'vite-plugin-vue-devtools';
+import dotenv from 'dotenv';
 
-export function createViteConfig(env) {
+dotenv.config();
+
+export function createViteConfig() {
+  const env = process.env;
+
   const envMode = env.VITE_APP_MODE;
   const envPort = env.VITE_APP_PORT;
   const envHost = env.VITE_APP_HOST;

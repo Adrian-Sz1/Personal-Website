@@ -1,7 +1,7 @@
 <script setup>
 import ContentBox from './ContentBox.vue';
 import { TECHNOLOGIES as T} from './technologies';
-const { LANGS, FRAMEWORKS, BUILD_TOOLS, DATABASES, DEVOPS_TOOLS, TESTING, MONITORING, ARCHITECTURE ,OTHER } = T;
+const { LANGS, FRAMEWORKS, BUILD_TOOLS, DATABASES, DEVOPS_TOOLS, MONITORING, ARCHITECTURE ,OTHER } = T;
 </script>
 
 <template>
