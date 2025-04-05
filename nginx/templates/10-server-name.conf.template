@@ -1,11 +1,15 @@
-server {
-    listen 80;
-    server_name ${VITE_APP_HOST};
-    root /usr/share/nginx/html;
+http {
+    server_names_hash_bucket_size 64;
+    
+    server {
+        listen 80;
+        server_name ${VITE_APP_HOST};
+        root /usr/share/nginx/html;
 
-    index index.html;
+        index index.html;
 
-    location / {
-        try_files $uri $uri/ /index.html;
+        location / {
+            try_files $uri $uri/ /index.html;
+        }
     }
 }
