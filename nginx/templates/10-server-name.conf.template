@@ -1,7 +1,4 @@
 server {
-    listen ${PORT:-80};
-    server_name ${VITE_APP_HOST:-_};
-
     root /usr/share/nginx/html;
     index index.html;
 
