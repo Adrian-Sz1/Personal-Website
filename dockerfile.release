@@ -24,6 +24,8 @@ FROM nginx:alpine
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-COPY ./nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
+RUN mkdir /etc/nginx/templates
+
+COPY ./nginx/templates /etc/nginx/templates
 
 EXPOSE 80
