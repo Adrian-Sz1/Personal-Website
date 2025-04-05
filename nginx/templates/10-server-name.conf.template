@@ -2,14 +2,10 @@ server {
     listen 80;
     server_name ${VITE_APP_HOST};
 
-    location / {
+    # Redirect to HTTPS if the X-Forwarded-Proto header is 'http'
+    if ($http_x_forwarded_proto = "http") {
         return 301 https://$host$request_uri;
     }
-}
-
-server {
-    listen 443;
-    server_name ${VITE_APP_HOST};
 
     root /usr/share/nginx/html;
     index index.html;
