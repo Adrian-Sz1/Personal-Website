@@ -29,7 +29,9 @@ const handleDownload = () => {
 
 <template>
   <nav>
-    <img alt="logo" class="logo" src="/AS_LOGO_Favicon_192x192.ico"/>
+    <RouterLink id="home-pic-link" to="/" @click="closeMenu">
+      <img alt="logo" class="logo" src="/AS_LOGO_Favicon_192x192.ico"/>
+    </RouterLink>
     <button class="hamburger" @click="toggleMenu">
       <span class="bar"></span>
       <span class="bar"></span>
@@ -46,6 +48,14 @@ const handleDownload = () => {
 </template>
 
 <style scoped>
+#home-pic-link {
+ display: flex;
+ 
+}
+#home-pic-link.router-link-exact-active:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
 nav {
   display: flex;
   position: fixed;
