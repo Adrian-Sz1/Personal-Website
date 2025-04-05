@@ -4,6 +4,7 @@
   /* padding: 2rem; */
   font-weight: normal;
   font-family: "Roboto";
+  padding-top: 70px;
 }
 
 @media (max-width: 427px) {
