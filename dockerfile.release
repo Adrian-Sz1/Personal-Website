@@ -23,7 +23,10 @@ RUN npm run build
 FROM nginx:alpine
 
 ARG VITE_APP_HOST
+ARG VITE_APP_PORT
+
 ENV VITE_APP_HOST=$VITE_APP_HOST
+ENV VITE_APP_PORT=$VITE_APP_PORT
 
 COPY --from=builder /app/dist /usr/share/nginx/html
 

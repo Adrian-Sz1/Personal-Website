@@ -11,8 +11,8 @@ export function createViteConfig() {
   const env = process.env;
 
   const envMode = env.VITE_APP_MODE;
+  const envPort = env.VITE_APP_PORT;
   const envHost = env.VITE_APP_HOST;
-  const envPort = env.PORT;
 
   if (envMode === 'local-dev') {
     console.log(envMode + ' @ ' + envHost + ':' + envPort);

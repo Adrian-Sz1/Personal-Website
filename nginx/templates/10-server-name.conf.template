@@ -1,5 +1,5 @@
 server {
-    listen ${PORT};
+    listen ${VITE_APP_PORT};
     server_name ${VITE_APP_HOST};
     root /usr/share/nginx/html;
 
