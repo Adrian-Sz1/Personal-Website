@@ -22,6 +22,9 @@ RUN npm run build
 # Serve
 FROM nginx:alpine
 
+ARG VITE_APP_HOST
+ENV VITE_APP_HOST=$VITE_APP_HOST
+
 COPY --from=builder /app/dist /usr/share/nginx/html
 
 COPY ./nginx/templates /etc/nginx/templates
