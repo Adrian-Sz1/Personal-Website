@@ -98,7 +98,7 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
 }
 
 h1 {
-  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.2;
   color: rgb(209, 222, 222);
   font-weight: bold;
