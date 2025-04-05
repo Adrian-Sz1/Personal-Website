@@ -1,9 +1,15 @@
 @import './base.css';
 
 #app {
-  padding: 2rem;
+  /* padding: 2rem; */
   font-weight: normal;
   font-family: "Roboto";
+}
+
+@media (max-width: 427px) {
+  #app {
+    /* padding: 0.5rem; */
+  }
 }
 
 a,
@@ -21,12 +27,10 @@ a,
 }
 
 @media (min-width: 1024px) {
-
-
-  #app {
+  /* #app {
     grid-template-columns: 1fr 1fr;
     padding: 2rem 2rem;
-  }
+  } */
 }
 .mint-pill-light {
   background-color: rgba(200, 255, 235, 0.25);
@@ -48,7 +52,9 @@ a,
   background-color: rgba(170, 255, 220, 0.5);
   color: rgba(40, 150, 120, 1); /* Darker text */
 }
-
+ol {
+  padding-left: 0;
+}
 li {
   list-style-type: none;
   background-color: transparent;

@@ -84,7 +84,7 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
     flex-wrap: wrap;
     cursor: default;
     padding: 1rem;
-    min-height: 200px;
+    /* min-height: 200px; */
     width: 100%;
     background-color: transparent;
     border: 1px solid transparent;
