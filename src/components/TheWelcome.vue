@@ -31,10 +31,10 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
         <p>Feel free to check out my projects and get in touch!</p>
       </div>
       <div :class="showAnimation ? 'social-links fade-in' : 'social-links'" style="--order: 4.5" v-if="showSocial">
-        <a :href="socialLinks.linkedin" target="_blank" v-if="socialLinks.linkedin">
+        <a :href="socialLinks.linkedin" v-if="socialLinks.linkedin">
           <img id="linkedin" class="filter-green" src="../assets/linkedin.svg" alt="LinkedIn"/>
         </a>
-        <a :href="socialLinks.github" target="_blank" v-if="socialLinks.github">
+        <a :href="socialLinks.github" v-if="socialLinks.github">
           <img id="github" class="filter-green" src="../assets/github.svg" alt="GitHub"/>
         </a>
       </div>
