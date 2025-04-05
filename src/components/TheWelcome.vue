@@ -31,10 +31,10 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
         <p>Feel free to check out my projects and get in touch!</p>
       </div>
       <div :class="showAnimation ? 'social-links fade-in' : 'social-links'" style="--order: 4.5" v-if="showSocial">
-        <a :href="socialLinks.linkedin" target="_blank" v-if="socialLinks.linkedin">
+        <a :href="socialLinks.linkedin" v-if="socialLinks.linkedin">
           <img id="linkedin" class="filter-green" src="../assets/linkedin.svg" alt="LinkedIn"/>
         </a>
-        <a :href="socialLinks.github" target="_blank" v-if="socialLinks.github">
+        <a :href="socialLinks.github" v-if="socialLinks.github">
           <img id="github" class="filter-green" src="../assets/github.svg" alt="GitHub"/>
         </a>
       </div>
@@ -86,7 +86,7 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
   align-items: center;
 }
 #profile-pic {
-  width: clamp(250px, 35%, 300px);
+  width: clamp(125px, 45%, 35vw);
   height: auto;
   border-radius: 50%;
 }
@@ -98,7 +98,7 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
 }
 
 h1 {
-  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-size: clamp(2rem, 6vw, 4rem);
   line-height: 1.2;
   color: rgb(209, 222, 222);
   font-weight: bold;
@@ -138,6 +138,9 @@ p {
   #the-welcome {
     flex-direction: column-reverse;
     align-items: center;
+  }
+  #profile-pic-container {
+    margin-top: 50px;
   }
 }
 </style>
