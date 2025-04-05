@@ -1,4 +1,7 @@
 server {
+    listen ${PORT};
+    server_name ${VITE_APP_HOST};
+
     root /usr/share/nginx/html;
     index index.html;
 
@@ -6,7 +9,6 @@ server {
         try_files $uri $uri/ /index.html;
     }
 
-    # Optional: Add caching for static assets
     location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg|otf)$ {
         expires 6M;
         access_log off;

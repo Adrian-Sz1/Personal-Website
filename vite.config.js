@@ -14,12 +14,9 @@ export function createViteConfig() {
   const envPort = env.VITE_APP_PORT;
   const envHost = env.VITE_APP_HOST;
 
-  const base = '/'; 
-
   if (envMode === 'local-dev') {
     console.log(envMode + ' @ ' + envHost + ':' + envPort);
     return {
-      base: base,
       plugins: [vue(), vueDevTools()],
       server: {
         port: envPort,
@@ -38,11 +35,10 @@ export function createViteConfig() {
   } else if (envMode === 'development') {
     console.log(envMode + ' @ ' + envHost + ':' + envPort);
     return {
-      base: base,
       plugins: [vue(), vueDevTools()],
       server: {
         port: envPort,
-        // host: envHost,
+        host: envHost,
       },
       resolve: {
         alias: {
@@ -53,7 +49,6 @@ export function createViteConfig() {
   } else if (envMode === 'release') {
     console.log(envMode + ' @ ' + envHost + ':' + envPort);
     return {
-      base: base,
       plugins: [vue()],
       server: {
         port: envPort,
