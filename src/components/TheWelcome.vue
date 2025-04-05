@@ -86,7 +86,7 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
   align-items: center;
 }
 #profile-pic {
-  width: clamp(250px, 35%, 300px);
+  width: clamp(125px, 45%, 35vw);
   height: auto;
   border-radius: 50%;
 }
@@ -138,6 +138,9 @@ p {
   #the-welcome {
     flex-direction: column-reverse;
     align-items: center;
+  }
+  #profile-pic-container {
+    margin-top: 50px;
   }
 }
 </style>
