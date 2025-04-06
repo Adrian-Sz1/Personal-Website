@@ -22,22 +22,10 @@ RUN npm run build
 # Serve
 FROM nginx:alpine
 
-ARG VITE_APP_HOST
-ARG VITE_APP_PORT
-
-ENV VITE_APP_HOST=$VITE_APP_HOST
-ENV VITE_APP_PORT=$VITE_APP_PORT
-
-# Copy built files from the builder stage
 COPY --from=builder /app/dist /usr/share/nginx/html
 
-# Copy nginx templates
-COPY nginx/nginx.conf.template /etc/nginx/templates/nginx.conf.template
-COPY nginx/templates/10-server-name.conf.template /etc/nginx/templates/10-server-name.conf.template
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
-CMD ["/bin/sh", "-c", \
-  "envsubst < /etc/nginx/templates/nginx.conf.template > /etc/nginx/nginx.conf && \
-   envsubst < /etc/nginx/templates/10-server-name.conf.template > /etc/nginx/conf.d/10-server-name.conf && \
-   exec nginx -g 'daemon off;'"]
+CMD ["nginx", "-g", "daemon off;"]
