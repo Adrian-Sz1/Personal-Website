@@ -36,10 +36,6 @@ export function createViteConfig() {
     console.log(envMode + ' @ ' + envHost + ':' + envPort);
     return {
       plugins: [vue(), vueDevTools()],
-      server: {
-        port: envPort,
-        host: envHost,
-      },
       resolve: {
         alias: {
           '@': fileURLToPath(new URL('./src', import.meta.url)),
@@ -50,10 +46,6 @@ export function createViteConfig() {
     console.log(envMode + ' @ ' + envHost + ':' + envPort);
     return {
       plugins: [vue()],
-      server: {
-        port: envPort,
-        host: envHost,
-      },
     };
   }
   throw new Error(`Invalid VITE_APP_MODE: ${envMode}`);
