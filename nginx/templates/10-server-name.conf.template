@@ -1,12 +1,18 @@
 server {
-    listen       80;
-    listen  [::]:80;
-    server_name  localhost;
+    listen 80;
+    server_name _;
+
+    root /usr/share/nginx/html;
+    index index.html;
 
     location / {
-        root   /usr/share/nginx/html;
-        index  index.html;
         try_files $uri $uri/ /index.html;
+    }
+
+    location ~* \.(?:ico|css|js|gif|jpe?g|png|woff2?|eot|ttf|svg|otf)$ {
+        expires 6M;
+        access_log off;
+        add_header Cache-Control "public";
     }
 
     error_page 404 /index.html;
