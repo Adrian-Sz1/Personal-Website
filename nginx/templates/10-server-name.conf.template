@@ -1,16 +1,13 @@
 server {
-    listen 80;
-    server_name ${VITE_APP_HOST};
-
-    # Redirect to HTTPS if the X-Forwarded-Proto header is 'http'
-    if ($http_x_forwarded_proto = "http") {
-        return 301 https://$host$request_uri;
-    }
-
-    root /usr/share/nginx/html;
-    index index.html;
+    listen       80;
+    listen  [::]:80;
+    server_name  localhost;
 
     location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
         try_files $uri $uri/ /index.html;
     }
+
+    error_page 404 /index.html;
 }
