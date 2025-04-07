@@ -12,7 +12,7 @@ const { LANGS, FRAMEWORKS, BUILD_TOOLS, DATABASES, DEVOPS_TOOLS, MONITORING, ARC
       dateRange="2025 - Present"
       header="Personal Portfolio Website"
       subHeader="Personal Project"
-      desc="Source code for my website used for showcasing my projects, CV and information about myself serving as my portfolio."
+      desc="Source code for my website. I use it showcasing my projects, CV and other relevant information about myself. It is built with Vue 3 and Vite for optimal performance and responsiveness, the site is served by Nginx and hosted on Google Cloud Run. The deployment process is automated using a CI/CD pipeline managed with GitHub Actions but also using Google Cloud Run triggers for automatic detection of pushed code."
       :technologyList="[
         FRAMEWORKS.VUE,
         LANGS.HTML_CSS, 

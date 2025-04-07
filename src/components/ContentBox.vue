@@ -24,12 +24,12 @@ const props = defineProps({
     },
     technologyList: {
         type: Array,
-        required: true,
+        required: false,
         validator: (value) => value.every((item) => typeof item === 'string'),
     },
 });
 
-const sortedTechnologyList = sortTechnologies(props.technologyList);
+const sortedTechnologyList = props.technologyList !== undefined ? sortTechnologies(props.technologyList) : [];
 </script>
 
 <template>
@@ -38,7 +38,7 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
             <header id="date-container">{{ dateRange }}</header>
             <div id="text-body-container">
                 <div id="clickable-title-container">
-                    <a v-if="urlLink" :href="urlLink" target="_blank">
+                    <a :href="urlLink" target="_blank">
                         <h2 style="font-weight: 500;">{{ header }}</h2>
                     </a>
                 </div>
@@ -122,7 +122,7 @@ p {
     color: var(--mode-color-text);
     letter-spacing: 0.02rem;
     margin-bottom: 0.35rem;
-    font-size: 16px;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     text-align: justify;
     text-justify: inter-word;
     display: flex;

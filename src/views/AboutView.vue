@@ -1,7 +1,10 @@
+<script setup lang="ts">
+import AboutMe from '@/components/AboutMe.vue';
+
+</script>
+
 <template>
-  <div>
-    <h1>About Me</h1>
-  </div>
+  <AboutMe/>
 </template>
 
 <style>

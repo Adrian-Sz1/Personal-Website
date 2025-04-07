@@ -130,7 +130,7 @@ h2 {
 }
 
 p {
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
   line-height: 1.5;
   margin: 1rem 0;
   color: var(--mode-color-text);
