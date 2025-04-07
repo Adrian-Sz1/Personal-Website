@@ -153,6 +153,7 @@ nav a.router-link-exact-active:hover {
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.85);
     margin: 0;
+    backdrop-filter: blur(5px); 
   }
 
   #nav-links-container.open {
@@ -160,7 +161,11 @@ nav a.router-link-exact-active:hover {
   }
 
   #nav-links-container li {
+    display: flex;
+    justify-content: right;
+    align-items: center;
     margin: 0;
+    width: 100%;
   }
 
   nav a {

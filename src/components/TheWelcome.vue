@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import IconGithub from './icons/IconGithub.vue';
 import IconLinkedIn from './icons/IconLinkedIn.vue';
+import IconEmail from './icons/IconEmail.vue';
 
 const showAnimation = ref(false);
 
@@ -18,6 +19,7 @@ const socialLinks = ref({
   linkedin: "https://www.linkedin.com/in/adrian-szoszkiewicz-901136259",
   github: "https://github.com/Adrian-Sz1",
 });
+const contactEmail = ref("adrianszoszkiewicz@gmail.com");
 </script>
 
 <template>
@@ -39,7 +41,10 @@ const socialLinks = ref({
         <a :href="socialLinks.github" v-if="socialLinks.github">
           <IconGithub id="icon-github" class="svg-icon-link" />
         </a>
-
+        <a :href="'mailto:' + contactEmail">
+          <IconEmail id="icon-email" class="svg-icon-link" />
+        </a>
+        
       </div>
     </div>
     <div id="profile-pic-container">
@@ -138,7 +143,7 @@ p {
 }
 
 .social-links #icon-github,
-#icon-linkedin {
+#icon-linkedin, #icon-email {
   width: clamp(36px, 5vw, 48px);
 }
 

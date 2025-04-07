@@ -28,15 +28,20 @@ a:hover {
 
 /* 
 button {
-  background-color: var(--mode-color-a-1);
-  color: var(--mode-color-bg-1);
+  background-color: var(--mode-color-bg-1);
+  color: var(--mode-color-a-1);
   border-radius: 5px;
-  padding: 0.5rem 0.5rem;
-  font-size: 1.2rem;
+  padding: 0rem 1rem;
+  font-size: 1rem;
   font-weight: bold;
   border: 1px solid transparent;
   cursor: pointer;
   transition: 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-weight: bold;
 }
 
 button:hover {
