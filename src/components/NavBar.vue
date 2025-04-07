@@ -30,7 +30,7 @@ const handleDownload = () => {
 <template>
   <nav>
     <RouterLink id="home-pic-link" to="/" @click="closeMenu">
-      <img alt="logo" class="logo" src="/AS_LOGO_Favicon_192x192.ico"/>
+      <img alt="logo" class="logo" src="/Main_Logo.png"/>
     </RouterLink>
     <button class="hamburger" @click="toggleMenu">
       <span class="bar"></span>
@@ -65,7 +65,6 @@ nav {
   width: 100%;
   height: 70px;
   font-size: clamp(10px, 1rem, 1rem);
-  background-color: rgba(0, 0, 0, 0.45);
   border: none;
   backdrop-filter: blur(5px);
   box-shadow: 0 2px rgb(0, 189, 126);
@@ -94,7 +93,7 @@ nav {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  background-color: var(--color-text);
+  background-color: var(--mode-color-text);
 }
 
 #nav-links-container {
@@ -112,19 +111,19 @@ nav {
 nav a {
   cursor: pointer;
   display: block;
-  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
   font-weight: bold;
   text-decoration: none;
-  color: var(--color-text);
+  color: var(--mode-color-text);
 }
 
 nav a:hover {
-  color: var(--content-box-title-color-highlight);
+  color: var(--as-u-color-a-1-highlight);
   background-color: transparent;
 }
 
 nav a.router-link-exact-active {
-  color: var(--content-box-title-color);
+  color: var(--as-u-color-a-1-active);
 }
 
 nav a.router-link-exact-active:hover {
@@ -136,8 +135,6 @@ nav a.router-link-exact-active:hover {
   nav {
     flex-direction: row;
     justify-content: space-between;
-    /* height: auto; */
-    /* max-height: 9%; */
     padding: 0.5rem;
   }
 
@@ -150,7 +147,6 @@ nav a.router-link-exact-active:hover {
     flex-direction: column;
     width: 100%;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
     position: absolute;
     top: 70px;
     left: -20px;

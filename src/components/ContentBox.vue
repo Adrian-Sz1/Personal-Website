@@ -2,31 +2,31 @@
 import { sortTechnologies } from './technologyUtils';
 
 const props = defineProps({
-  urlLink: {
-    type: String,
-    required: false,
-  },
-  dateRange: {
-    type: String,
-    required: false,
-  },
-  header: {
-    type: String,
-    required: true,
-  },
-  subHeader: {
-    type: String,
-    required: false,
-  },
-  desc: {
-    type: String,
-    required: true,
-  },
-  technologyList: {
-    type: Array,
-    required: true,
-    validator: (value) => value.every((item) => typeof item === 'string'),
-  },
+    urlLink: {
+        type: String,
+        required: false,
+    },
+    dateRange: {
+        type: String,
+        required: false,
+    },
+    header: {
+        type: String,
+        required: true,
+    },
+    subHeader: {
+        type: String,
+        required: false,
+    },
+    desc: {
+        type: String,
+        required: true,
+    },
+    technologyList: {
+        type: Array,
+        required: true,
+        validator: (value) => value.every((item) => typeof item === 'string'),
+    },
 });
 
 const sortedTechnologyList = sortTechnologies(props.technologyList);
@@ -35,15 +35,15 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
 <template>
     <div id="out-container">
         <div id="inner-container">
-            <header id="date-container">{{dateRange}}</header>
+            <header id="date-container">{{ dateRange }}</header>
             <div id="text-body-container">
                 <div id="clickable-title-container">
                     <a v-if="urlLink" :href="urlLink" target="_blank">
-                        <h2 style="font-weight: bold;">{{header}}</h2>
+                        <h2 style="font-weight: 500;">{{ header }}</h2>
                     </a>
                 </div>
-                <h3>{{subHeader}}</h3>
-                <p>{{desc}}</p>
+                <h3>{{ subHeader }}</h3>
+                <p>{{ desc }}</p>
                 <div id="out-skills-container">
                     <ul id="skills-container">
                         <li class="mint-pill-medium" v-for="technology in sortedTechnologyList" :key="technology">
@@ -51,7 +51,7 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
                         </li>
                     </ul>
                 </div>
-            </div>    
+            </div>
         </div>
     </div>
 </template>
@@ -74,6 +74,7 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
         text-justify: inter-word;
         font-size: 14px;
     }
+
     h2 {
         font-size: 1.65em;
     }
@@ -84,15 +85,14 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
     flex-wrap: wrap;
     cursor: default;
     padding: 1rem;
-    /* min-height: 200px; */
     width: 100%;
     background-color: transparent;
     border: 1px solid transparent;
 }
 
 #out-container:hover {
-    background-color: rgba(0,189, 126, 0.02);
-    border: 1px solid rgba(0,189, 126, 0.1);
+    background-color: rgba(0, 189, 126, 0.02);
+    border: 1px solid rgba(0, 189, 126, 0.1);
     border-radius: 5px;
 }
 
@@ -104,7 +104,7 @@ const sortedTechnologyList = sortTechnologies(props.technologyList);
 }
 
 #date-container {
-    color:var(--content-box-date-color);
+    color: var(--mode-color-text);
     letter-spacing: 0.2rem;
 }
 
@@ -117,15 +117,9 @@ a {
     display: flex;
 }
 
-a:hover {
-    background-color: transparent;
-    transition: 0.4s;
-    color: var(--content-box-title-color-highlight);
-}
-
 p {
     line-height: 1.5rem;
-    color:var(--content-box-desc-color);
+    color: var(--mode-color-text);
     letter-spacing: 0.02rem;
     margin-bottom: 0.35rem;
     font-size: 16px;
@@ -143,9 +137,10 @@ h2 {
 
 h3 {
     line-height: 2rem;
-    color:rgba(129, 176, 160, 0.79);
+    color: var(--mode-color-h3-1);
     letter-spacing: 0.06rem;
 }
+
 #out-skills-container {
     flex-grow: 1;
 }

@@ -2,20 +2,31 @@
 import { RouterView } from 'vue-router'
 import Particles from './components/Particles.vue';
 import NavBar from './components/NavBar.vue';
+import UnderConstructionView from './components/UnderConstructionView.vue';
+
+const isUnderConstruction = import.meta.env.VITE_APP_UNDER_CONSTRUCTION === 'true';
+
+isUnderConstruction ? import('./components/UnderConstructionView.vue') : null;
+
+
+console.log('Under construction:', isUnderConstruction);
 </script>
 
 <template>
-  <NavBar/>
-  <Particles/>
-  <!-- <UnderConstructionView/> -->
-  <!-- <TheProjects/> -->
+  <Particles />
+  <div v-if="!isUnderConstruction">
+    <NavBar />
     <div id="view">
       <router-view v-slot="{ Component }">
         <transition name="scale" mode="out-in">
-          <component :is="Component"/>
+          <component :is="Component" />
         </transition>
       </router-view>
     </div>
+  </div>
+  <div v-else>
+    <UnderConstructionView />
+  </div>
 </template>
 
 <style scoped>

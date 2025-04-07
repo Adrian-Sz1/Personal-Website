@@ -1,61 +1,64 @@
 @import './base.css';
 
 #app {
-  /* padding: 2rem; */
   font-weight: normal;
   font-family: "Roboto";
   padding-top: 70px;
 }
 
-@media (max-width: 427px) {
-  #app {
-    /* padding: 0.5rem; */
-  }
-}
-
-a,
-.green {
+a {
   text-decoration: none;
-  color: rgb(0, 189, 126);
+  color: var(--mode-color-a-1);
   transition: 0.4s;
-  /* padding: 3px; */
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+a:hover {
+  color: var(--mode-color-a-1-highlight);
 }
 
-@media (min-width: 1024px) {
-  /* #app {
-    grid-template-columns: 1fr 1fr;
-    padding: 2rem 2rem;
-  } */
+.svg-icon-link {
+  filter: invert(47%) sepia(97%) saturate(1278%) hue-rotate(125deg) brightness(93%) contrast(106%);
+  transition: 0.4s;
 }
-.mint-pill-light {
-  background-color: rgba(200, 255, 235, 0.25);
-  color: rgba(100, 200, 170, 0.8);
+
+.svg-icon-link:hover {
+  filter: invert(73%) sepia(90%) saturate(395%) hue-rotate(102deg) brightness(101%) contrast(95%);
+  transform: scale(1.1);
 }
+
+/* 
+button {
+  background-color: var(--mode-color-a-1);
+  color: var(--mode-color-bg-1);
+  border-radius: 5px;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover {
+  border: 1px solid var(--mode-color-a-1-highlight);
+  background-color: transparent;
+  color: var(--mode-color-a-1);
+
+} */
+
+
+
 
 .mint-pill-medium {
   cursor: default;
-  background-color: rgba(140, 167, 158, 0.15); /* Your primary mint with lower alpha */
+  background-color: rgba(140, 167, 158, 0.15);
   color: rgba(214, 234, 229, 0.8);
 }
 
-.mint-pill-dark {
-  background-color: rgba(100, 200, 170, 0.2);
-  color: rgba(100, 200, 170, 0.8);
-}
-
-.mint-pill-semi {
-  background-color: rgba(170, 255, 220, 0.5);
-  color: rgba(40, 150, 120, 1); /* Darker text */
-}
 ol {
   padding-left: 0;
 }
+
 li {
   list-style-type: none;
   background-color: transparent;
@@ -65,6 +68,7 @@ li {
   box-shadow: 1rem;
   margin: 2rem 0.5rem;
 }
+
 li:hover {
   list-style-type: none;
   border-radius: 15px;
