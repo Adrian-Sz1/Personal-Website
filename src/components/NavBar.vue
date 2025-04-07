@@ -143,7 +143,8 @@ nav a.router-link-exact-active:hover {
   }
 
   #nav-links-container {
-    display: none;
+    display: flex;
+    visibility: hidden;
     flex-direction: column;
     width: 100%;
     text-align: center;
@@ -154,10 +155,14 @@ nav a.router-link-exact-active:hover {
     background-color: rgba(0, 0, 0, 0.85);
     margin: 0;
     backdrop-filter: blur(5px); 
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
   }
 
   #nav-links-container.open {
     display: flex;
+    visibility: visible;
+    opacity: 1;
   }
 
   #nav-links-container li {
