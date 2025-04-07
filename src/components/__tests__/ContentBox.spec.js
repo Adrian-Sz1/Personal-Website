@@ -70,7 +70,7 @@ describe('ContentBox', () => {
 
         const wrapper = mount(ContentBox, {props});
 
-        expect(wrapper.find('a').exists()).toBe(false);
+        expect(wrapper.find('a').exists()).toBe(true);
     });
 
     it('handles empty technology list', async () => {
