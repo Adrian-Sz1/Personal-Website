@@ -148,9 +148,11 @@ nav a.router-link-exact-active:hover {
     width: 100%;
     text-align: center;
     position: absolute;
-    top: 70px;
-    left: -20px;
+    top: 72px;
+    left: 0;
     z-index: 1;
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: 0;
   }
 
   #nav-links-container.open {
