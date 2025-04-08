@@ -54,44 +54,6 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
   </div>
 </template>
 <style scoped>
-@keyframes fadeInLeft {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-a {
-  display: flex;
-}
-
-.fade-in-left {
-  animation: fadeInLeft 0.5s ease-in-out forwards;
-  animation-delay: calc(var(--order) * 0.75s);
-  opacity: 0;
-}
-
-.fade-in {
-  animation: fadeIn 1s ease-in-out forwards;
-  animation-delay: calc(var(--order) * 0.75s);
-  opacity: 0;
-}
-
 #the-welcome {
   display: flex;
 }
@@ -115,25 +77,8 @@ a {
   overflow: hidden;
 }
 
-h1 {
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1.2;
-  color: var(--mode-color-h1-1);
-  font-weight: bold;
-}
-
-h2 {
-  font-size: clamp(1.2rem, 4vw, 2rem);
-  line-height: 2.5rem;
-  color: var(--mode-color-h2-1);
-  font-weight: 500;
-}
-
 p {
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
-  line-height: 1.5;
   margin: 1rem 0;
-  color: var(--mode-color-text);
 }
 
 .social-links {

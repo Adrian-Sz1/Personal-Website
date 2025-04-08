@@ -113,16 +113,7 @@ const sortedTechnologyList = props.technologyList !== undefined ? sortTechnologi
     justify-content: left;
 }
 
-a {
-    display: flex;
-}
-
 p {
-    line-height: 1.5rem;
-    color: var(--mode-color-text);
-    letter-spacing: 0.02rem;
-    margin-bottom: 0.35rem;
-    font-size: clamp(0.9rem, 2.5vw, 1rem);
     text-align: justify;
     text-justify: inter-word;
     display: flex;
@@ -130,9 +121,9 @@ p {
 }
 
 h2 {
-    line-height: 2.5rem;
     letter-spacing: 0.08rem;
     font-size: 1.5em;
+    color: inherit;
 }
 
 h3 {

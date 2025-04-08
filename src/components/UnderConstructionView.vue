@@ -59,16 +59,15 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
 }
 
 h1 {
+  text-align: center;
   font-size: 2.5em;
   margin-bottom: 20px;
   color: var(--mode-color-a-1);
+  font-weight: normal;
 }
 
 p {
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
-  line-height: 1.5;
   margin: 1rem 0;
-  color: var(--mode-color-text);
 }
 
 .social-links {
@@ -88,7 +87,7 @@ p {
 
 .contact a {
   color: #007bff;
-  text-decoration: none;
+  display: inline;
 }
 
 .contact a:hover {
