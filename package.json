@@ -1,16 +1,18 @@
 {
   "name": "personal-website",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "test:unit": "vitest",
+    "test": "vitest",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
+  "author": "Adrian Szoszkiewicz",
+  "license": "MIT",
   "dependencies": {
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/vue3": "^3.0.1",
