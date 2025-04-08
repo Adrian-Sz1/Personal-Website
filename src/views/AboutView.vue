@@ -1,5 +1,5 @@
-<script setup lang="ts">
-import AboutMe from '@/components/AboutMe.vue';
+<script setup>
+import AboutMe from '../components/AboutMe.vue';
 
 </script>
 
