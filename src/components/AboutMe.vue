@@ -18,7 +18,7 @@ onMounted(() => {
         <h1 :class="showAnimation ? 'fade-in-left' : ''" style="--order: 0.5">About Me</h1>
         <h2 :class="showAnimation ? 'fade-in-left' : ''" style="--order: 1">"Build with purpose. Ship with pride."</h2>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 5">
-          It all started back in secondary school, when I was making silly little games for fun—nothing groundbreaking,
+          It all started back in secondary school, when I was making silly little games for fun — nothing groundbreaking,
           but enough to completely hook me.
           There was something fascinating about writing a bunch of instructions and watching the computer follow them.
           That simple idea lit the spark that's kept me chasing better, smarter software ever since.
@@ -28,25 +28,24 @@ onMounted(() => {
           in the summer of 2024.
           During it, I gained invaluable experience working with .NET, KnockoutJS, and key aspects of an agile workflow.
           Experiencing real-world development for the first time and seeing how my work contributed to the bigger
-          picture made a lasting impact and I've carried this since for every one of my projects.</p>
+          picture made a lasting impact and I've carried this since for every one of my projects - with intention and
+          desire to deliver something I can be proud of.</p>
       </div>
       <hr :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 9" />
       <div id="right-content" :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 11">
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 13">
-          My portfolio showcases a range of projects, each providing valueable lessons in identifying my strengths, and
-          areas for growth.
-          I've built responsive frontends with Vue and React, designed APIs and backend services with Python, Java, and
-          ASP.NET, and managed data with MongoDB and Microsoft SQL Server.
-          I've also worked with Docker, Nginx, and Google Cloud Run, and used GitHub Actions for CI/CD.
+          My portfolio is a reflection of that mindset. From responsive frontends built with Vue and React, to backend
+          services in Python, Java, and ASP.NET, each project has taught me something new. I've worked with MongoDB,
+          Microsoft SQL Server, Docker, Nginx, Google Cloud Run, and used GitHub Actions for CI/CD automation — all tools
+          in service of shipping meaningful software.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 15">
-          I view each project - including all the silly little games I started out
-          with, and my time at NantHealth, as a crucial step in my ongoing journey to becoming a well-rounded and
+          As a result, I view each project — including all the silly little games I started out
+          with — and my time at NantHealth, as a crucial step in my ongoing journey to becoming a well-rounded and
           effective software engineer.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 17">
-          When programming isn't on the menu though, I enjoy bouldering and being active. I love travelling and
-          exploring new places.</p>
+          When programming isn't on the menu though, I enjoy bouldering, staying active exploring new places through travelling whenever I can          exploring new places.</p>
       </div>
     </div>
   </div>
