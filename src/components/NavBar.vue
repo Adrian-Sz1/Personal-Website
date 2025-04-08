@@ -102,6 +102,7 @@ nav {
   justify-content: flex-end;
   flex-grow: 1;
   margin-left: 20px;
+  z-index: 9;
 }
 
 #nav-links-container li {
@@ -150,18 +151,19 @@ nav a.router-link-exact-active:hover {
     text-align: center;
     position: absolute;
     top: 72px;
-    left: 0;
+    left: 100%;
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.85);
     margin: 0;
     backdrop-filter: blur(5px); 
     opacity: 0;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
 
   #nav-links-container.open {
     display: flex;
     visibility: visible;
+    left: 0;
     opacity: 1;
   }
 

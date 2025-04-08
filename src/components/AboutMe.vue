@@ -17,33 +17,33 @@ onMounted(() => {
       <div id="left-content" :class="showAnimation ? 'fade-in' : ''" style="--order: 0">
         <h1 :class="showAnimation ? 'fade-in-left' : ''" style="--order: 0.5">About Me</h1>
         <h2 :class="showAnimation ? 'fade-in-left' : ''" style="--order: 1">"Build with purpose. Ship with pride."</h2>
-        <p :class="showAnimation ? 'fade-in' : ''" style="--order: 3">
+        <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 5">
           It all started back in secondary school, when I was making silly little games for fun—nothing groundbreaking,
           but enough to completely hook me.
           There was something fascinating about writing a bunch of instructions and watching the computer follow them.
           That simple idea lit the spark that's kept me chasing better, smarter software ever since.
         </p>
-        <p :class="showAnimation ? 'fade-in' : ''" style="--order: 5">
+        <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 7">
           My journey in software engineering gained significant momentum during my placement year prior to my graduation
           in the summer of 2024.
           During it, I gained invaluable experience working with .NET, KnockoutJS, and key aspects of an agile workflow.
           Experiencing real-world development for the first time and seeing how my work contributed to the bigger
           picture made a lasting impact and I've carried this since for every one of my projects.</p>
       </div>
-      <hr :class="showAnimation ? 'fade-in' : ''" style="--order: 5.5" />
-      <div id="right-content" :class="showAnimation ? 'fade-in' : ''" style="--order: 6">
-        <p :class="showAnimation ? 'fade-in' : ''" style="--order: 7">
+      <hr :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 9" />
+      <div id="right-content" :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 11">
+        <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 13">
           My portfolio showcases a range of projects, each providing valueable lessons in identifying my strengths, and
           areas for growth.
           I've built responsive frontends with Vue and React, designed APIs and backend services with Python, Java, and
           ASP.NET, and managed data with MongoDB and Microsoft SQL Server.
           I've also worked with Docker, Nginx, and Google Cloud Run, and used GitHub Actions for CI/CD.
         </p>
-        <p :class="showAnimation ? 'fade-in' : ''" style="--order: 9">
+        <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 15">
           I view each project, including my time at NantHealth - and yes, even all the silly little games I started out
           with too, as a crucial step in my ongoing journey to becoming a well-rounded and effective software engineer.
         </p>
-        <p :class="showAnimation ? 'fade-in' : ''" style="--order: 11">
+        <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 17">
           When programming isn't on the menu though, I enjoy bouldering and being active. I love travelling and
           exploring new places.</p>
       </div>
@@ -111,6 +111,11 @@ a {
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
   animation-delay: calc(var(--order) * 0.75s);
+  opacity: 0;
+}
+.fade-in-fast {
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: calc(var(--order) * 0.25s);
   opacity: 0;
 }
 
@@ -223,8 +228,8 @@ p {
     display: inline-block;
     justify-content: left;
     align-items: left;
-    max-width: 600px;
-    margin-right: 4rem;
+    /* max-width: 600px; */
+    /* margin-right: 4rem; */
   }
 
   #right-content {
