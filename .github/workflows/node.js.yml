@@ -1,0 +1,45 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: 
+      - production
+      - release
+      - dev
+  pull_request:
+    branches:
+      - production
+      - release
+      - dev
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x] # node-version: [18.x, 20.x, 22.x]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: Set VITE_APP_MODE environment variable
+        run: |
+          branch_name="${{ github.ref_name }}"
+          if [[ "$branch_name" == "production" || "$branch_name" == "release" ]]; then
+            echo "VITE_APP_MODE=release" >> $GITHUB_ENV
+          else
+            echo "VITE_APP_MODE=development" >> $GITHUB_ENV
+          fi
+      - run: npm ci
+      - run: npm run build --if-present
+        env:
+          VITE_APP_MODE: ${{ env.VITE_APP_MODE }}
+      - run: npm test
+        env:
+          VITE_APP_MODE: ${{ env.VITE_APP_MODE }}
