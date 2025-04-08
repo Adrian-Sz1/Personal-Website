@@ -1,30 +1,30 @@
+![GitHub package.json version](https://img.shields.io/github/package-json/v/Adrian-Sz1/Personal-Website)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fadrianszoszkiewicz.com)
+![GitHub License](https://img.shields.io/github/license/Adrian-sz1/Personal-Website)
+
 # Personal Website
 
-This repository contains the source code for my personal website, designed to showcase my portfolio, CV, and other relevant information about myself.
-
-## Purpose
-
-The primary purpose of this website is to:
-
-* Provide a centralized location for my professional portfolio.
-* Display my CV and relevant experience.
-* Offer easy access to my contact information.
-* Present my skills and projects in a clear and engaging manner.
+This repository contains the source code for my personal website, designed to showcase my portfolio, CV, and other relevant information about myself. The project is licensed under the MIT License, which allows you to freely use, modify, and distribute the code. The only request I have in return is that you provide appropriate attribution when using or modifying my work.
 
 ## Technologies Used
 
 * **Frontend:**
     * Vue.js
-      
+    * Vite
 * **Deployment:**
-    * Docker: For containerization of the application.
-    * Google Cloud Run: For containerized deployment.
-    * Nginx: Used as the production web server and serves the website.
+    * Docker: Used to containerize the application.
+    * Nginx: Serves the static frontend assets inside the Docker container for both development and production builds.
+    * Google Cloud Run: I personally deployed the project here using automated Github CI and Cloud Run triggers, however, it should be compatible with other providers with some extra tweaks to configuration.
 
 ## Project Setup
 ```sh
 npm install
 ```
+Create a '.env' file in the root of the project and inside enter the following:
+```sh
+VITE_APP_MODE=local-dev
+```
+This will set the required environment variable that the app uses to select the mode of the app. The environment variable can be set using the cloud provider or by passing it using -e parameter when building the Docker container with the intention of running it locally through Docker.
 
 ### Compile and Hot-Reload for Development
 
@@ -41,7 +41,7 @@ npm run build
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
-npm run test:unit
+npm run test
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
@@ -52,10 +52,10 @@ npm run lint
 
 ## Deployment
 
-The website is containerized using Docker and deployed on Google Cloud Run using GCP triggers, it is deployed across two environments:
-
-* **Release:** Served using Nginx on Google Cloud Run for public access acting as the stable production website for users to see and interact with.
-* **Staging:** A separate server (inaccessible to the public through the use of GCP IAM authentication) used for testing and staging updates before deployment to release.
+The application can be containerized with Docker and deployed to a cloud provider. It supports three deployment modes:
+   - local-dev: Designed for local development, this mode runs the application on the Vite development server, providing fast reloading and easy access to development features
+   - development: This mode functions as a 'dev-mode' production environment. It can be hosted or run through Docker and uses Nginx to serve the frontend content.
+   - release: This is the production-grade version of the application, representing the final, stable version. It is optimized for deployment and uses Nginx to serve the content.
 
 ## Usage
 
