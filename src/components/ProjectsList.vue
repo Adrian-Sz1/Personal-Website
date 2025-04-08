@@ -1,7 +1,7 @@
 <script setup>
 import ContentBox from './ContentBox.vue';
 import { TECHNOLOGIES as T} from './technologies';
-const { LANGS, FRAMEWORKS, BUILD_TOOLS, DATABASES, DEVOPS_TOOLS, MONITORING, ARCHITECTURE ,OTHER } = T;
+const { LANGS, FRAMEWORKS, BUILD_TOOLS, DATABASES, DEVOPS_TOOLS, ARCHITECTURE, OTHER } = T;
 </script>
 
 <template>
@@ -43,46 +43,17 @@ const { LANGS, FRAMEWORKS, BUILD_TOOLS, DATABASES, DEVOPS_TOOLS, MONITORING, ARC
       :technologyList="[LANGS.PYTHON, FRAMEWORKS.PYSIDE, ARCHITECTURE.MVVM, DEVOPS_TOOLS.CI, OTHER.STEAM_API]"
       />
     </li>
-    <!-- <li>
-      <ContentBox
-      urlLink="https://gist.github.com/Adrian-Sz1/06ca44d57d83afe2ee0d21bb30977e08"
-      dateRange="2024"
-      header="Transaxio"
-      subHeader="Personal Project"
-      desc="Some info about the project"
-      :technologyList="[LANGS.JAVA, DEVOPS_TOOLS.MAVEN, FRAMEWORKS.SPRING_BOOT, ARCHITECTURE.MICROSERVICES, MONITORING.GRAFANA, DEVOPS_TOOLS.NGINX, MONITORING.PROMETHEUS]"
-      />
-    </li> -->
     <li>
       <ContentBox
-      urlLink="https://gist.github.com/Adrian-Sz1/06ca44d57d83afe2ee0d21bb30977e08"
+      urlLink="https://github.com/Adrian-Sz1/NI-Sports-Forum-University-Project"
       dateRange="2023 - 2024"
       header="NI Sports Forum"
       subHeader="University Project"
-      desc="An interactive website for displaying all registered sport clubs in Northern Ireland. Using Google Maps API to locate and provide information about the places. The website features an admin panel which allows for public requests to add new clubs and information updates that can be investigated by the administrators and realised. Furthermore, it allows for customization of club pin colours, and icons."
+      desc="An interactive website showcasing all registered sports clubs in Northern Ireland, utilizing the Google Maps API to display and provide details about their locations. The site includes an admin panel where public submissions for adding new clubs and updating information can be reviewed by administrators and approved. Additionally, the platform offers customization options for club pin colors and icons.
+      The frontend uses React, while the backend is built with ASP.NET MVC. The database was hosted on Google Cloud for club storage, and the deployment process was automated using a CI/CD pipeline managed with GitLab. The project was developed as part of my final year university project in a team setting, where I was responsible for the complete development of the backend and database, as well as the design and integration of the frontend pages."
       :technologyList="[LANGS.C_SHARP, FRAMEWORKS.ASP_NET_MVC, FRAMEWORKS.REACT, BUILD_TOOLS.VITE, DEVOPS_TOOLS.CI, DATABASES.SQL_SERVER, OTHER.NODE_JS, OTHER.GOOGLE_MAPS_API]"
       />
     </li>
-    <!-- <li>
-      <ContentBox
-      urlLink="https://gist.github.com/Adrian-Sz1/06ca44d57d83afe2ee0d21bb30977e08"
-      dateRange="2021"
-      header="Command Line MP3 Player"
-      subHeader="University Project"
-      desc="Some info about the project"
-      :technologyList="[LANGS.JAVA]"
-      />
-    </li>
-    <li>
-      <ContentBox
-      urlLink="https://gist.github.com/Adrian-Sz1/06ca44d57d83afe2ee0d21bb30977e08"
-      dateRange="2019"
-      header="Rocket League Replay Parser"
-      subHeader="Personal Project"
-      desc="Replay parser for a popular multiplayer game to extract match scores, player points and statistics like goals, assists or saves. The parsed data can be exported as JSON, CSV, YAML or plain text for users to use."
-      :technologyList="[LANGS.PYTHON, OTHER.JSON]"
-      />
-    </li> -->
   </ol>
 </template>
 
