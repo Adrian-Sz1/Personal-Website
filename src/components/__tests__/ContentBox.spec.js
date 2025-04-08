@@ -1,9 +1,9 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
-import ContentBox from '@/components/ContentBox.vue';
-import { sortTechnologies } from '@/components/technologyUtils.js';
+import ContentBox from '../ContentBox.vue';
+import { sortTechnologies } from '../technologyUtils.js';
 
-vi.mock('@/components/technologyUtils.js', () => ({
+vi.mock('../technologyUtils.js', () => ({
   sortTechnologies: vi.fn(),
 }));
 
