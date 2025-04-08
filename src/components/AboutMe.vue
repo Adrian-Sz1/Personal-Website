@@ -45,7 +45,7 @@ onMounted(() => {
           effective software engineer.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 17">
-          When programming isn't on the menu though, I enjoy bouldering, staying active exploring new places through travelling whenever I can          exploring new places.</p>
+          When programming isn't on the menu though, I enjoy bouldering, staying active and exploring new places through travel whenever I can.</p>
       </div>
     </div>
   </div>
