@@ -40,8 +40,9 @@ onMounted(() => {
           I've also worked with Docker, Nginx, and Google Cloud Run, and used GitHub Actions for CI/CD.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 15">
-          I view each project, including my time at NantHealth - and yes, even all the silly little games I started out
-          with too, as a crucial step in my ongoing journey to becoming a well-rounded and effective software engineer.
+          I view each project - including all the silly little games I started out
+          with, and my time at NantHealth, as a crucial step in my ongoing journey to becoming a well-rounded and
+          effective software engineer.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 17">
           When programming isn't on the menu though, I enjoy bouldering and being active. I love travelling and
@@ -113,6 +114,7 @@ a {
   animation-delay: calc(var(--order) * 0.75s);
   opacity: 0;
 }
+
 .fade-in-fast {
   animation: fadeIn 1s ease-in-out forwards;
   animation-delay: calc(var(--order) * 0.25s);

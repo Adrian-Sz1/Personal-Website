@@ -1,6 +1,6 @@
 {
   "name": "personal-website",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,6 +11,8 @@
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
+  "author": "Adrian Szoszkiewicz",
+  "license": "MIT",
   "dependencies": {
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/vue3": "^3.0.1",
