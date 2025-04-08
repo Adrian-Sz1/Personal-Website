@@ -1,5 +1,70 @@
 @import './base.css';
 
+
+/** Button Styles **/
+
+/* Default Button */
+button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--mode-color-a-1);
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.4s;
+}
+button span {
+  color: var(--mode-color-bg-1);
+  font-weight: bold;
+}
+button:hover {
+  background-color: var(--mode-color-a-1-highlight);
+  border: 1px solid var(--mode-color-a-1-highlight);
+}
+button:active {
+  background-color: var(--mode-color-a-1-highlight);
+  border: 1px solid var(--mode-color-a-1-highlight);
+}
+button:disabled {
+  color: var(--mode-color-bg-1);
+  background-color: var(--mode-color-a-1-disabled);
+  border: 1px solid transparent;
+  cursor: not-allowed;
+}
+
+/* Button with Icon */
+button .svg-icon {
+  height: clamp(1rem, 32px, 2rem);
+  filter: invert(0%) sepia(28%) saturate(52%) hue-rotate(317deg) brightness(104%) contrast(81%);
+}
+
+/* Button with Border */
+.button-bordered {
+  color: var(--mode-color-a-1);
+  background-color: transparent;
+  border: 1px solid var(--mode-color-a-1);
+}
+.button-bordered:hover {
+  color: var(--mode-color-bg-1);
+  background-color: var(--mode-color-a-1-highlight);
+  border: 1px solid var(--mode-color-a-1-highlight);
+}
+.button-bordered:active {
+  color: var(--mode-color-bg-1);
+  background-color: var(--mode-color-a-1-highlight);
+  border: 1px solid var(--mode-color-a-1-highlight);
+}
+.button-bordered:disabled {
+  color: var(--mode-color-a-1-disabled);
+  background-color: transparent;
+  border: 1px solid var(--mode-color-a-1-disabled);
+  cursor: not-allowed;
+}
+
+
+
+
 #app {
   font-weight: normal;
   font-family: "Roboto";
@@ -21,35 +86,17 @@ a:hover {
   transition: 0.4s;
 }
 
+.svg-icon {
+  filter: invert(47%) sepia(97%) saturate(1278%) hue-rotate(125deg) brightness(93%) contrast(106%);
+  transition: 0.4s;
+}
+
 .svg-icon-link:hover {
   filter: invert(73%) sepia(90%) saturate(395%) hue-rotate(102deg) brightness(101%) contrast(95%);
   transform: scale(1.1);
 }
 
-/* 
-button {
-  background-color: var(--mode-color-bg-1);
-  color: var(--mode-color-a-1);
-  border-radius: 5px;
-  padding: 0rem 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: 0.4s;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  font-weight: bold;
-}
 
-button:hover {
-  border: 1px solid var(--mode-color-a-1-highlight);
-  background-color: transparent;
-  color: var(--mode-color-a-1);
-
-} */
 
 
 
