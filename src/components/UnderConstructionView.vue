@@ -36,11 +36,6 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
   z-index: 1;
 }
 
-.social-links #icon-github,
-#icon-linkedin {
-  width: clamp(36px, 5vw, 48px);
-}
-
 #crane-img {
   width: 150px;
   height: 150px;
@@ -71,7 +66,6 @@ p {
 }
 
 .social-links {
-  display: flex;
   justify-content: center;
   margin-top: 20px;
 }
@@ -80,17 +74,8 @@ p {
   margin: 0 10px;
 }
 
-.social-links img {
-  width: 30px;
-  height: 30px;
-}
-
 .contact a {
-  color: #007bff;
   display: inline;
 }
 
-.contact a:hover {
-  text-decoration: underline;
-}
 </style>

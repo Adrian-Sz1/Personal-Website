@@ -114,7 +114,6 @@ nav a {
   display: block;
   margin: 0.5rem 1rem;
   font-weight: bold;
-  text-decoration: none;
   color: var(--mode-color-text);
 }
 
@@ -177,8 +176,6 @@ nav a.router-link-exact-active:hover {
 
   nav a {
     padding: 1rem;
-    display: block;
-    text-align: center;
   }
 }
 </style>

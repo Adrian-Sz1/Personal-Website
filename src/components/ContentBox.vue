@@ -116,8 +116,6 @@ const sortedTechnologyList = props.technologyList !== undefined ? sortTechnologi
 p {
     text-align: justify;
     text-justify: inter-word;
-    display: flex;
-    flex-grow: 1;
 }
 
 h2 {

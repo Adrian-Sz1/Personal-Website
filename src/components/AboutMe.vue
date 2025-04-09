@@ -102,33 +102,8 @@ hr {
 }
 
 p {
-  text-align: left;
-  font-size: clamp(0.9rem, 2.5vw, 1rem);
   line-height: 1.65rem;
   margin: 1.5rem 0;
-}
-
-.p-emphasis {
-  padding: 0;
-  display: inline;
-  font-weight: bold;
-  color: var(--mode-color-h2-1);
-}
-
-#right-content p {
-  text-align: left;
-}
-
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-
-.social-links #icon-github,
-#icon-linkedin,
-#icon-email {
-  width: clamp(36px, 5vw, 48px);
 }
 
 @media only screen and (max-width: 726px) {
@@ -155,10 +130,6 @@ p {
   #right-content {
     display: inline-block;
     margin: 0;
-  }
-
-  p {
-    text-align: left;
   }
 
   hr {

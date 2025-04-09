@@ -81,17 +81,6 @@ p {
   margin: 1rem 0;
 }
 
-.social-links {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-}
-
-.social-links #icon-github,
-#icon-linkedin, #icon-email {
-  width: clamp(36px, 5vw, 48px);
-}
-
 @media only screen and (max-width: 726px) {
   #wrapper {
     margin: 2rem 1rem;

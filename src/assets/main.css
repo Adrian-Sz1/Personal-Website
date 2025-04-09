@@ -98,6 +98,8 @@ h2 {
 }
 
 p {
+  display: flex;
+  text-align: left;
   line-height: 1.5rem;
   color: var(--mode-color-text);
   letter-spacing: 0.02rem;
@@ -201,4 +203,15 @@ li:hover {
   animation: fadeIn 1s ease-in-out forwards;
   animation-delay: calc(var(--order) * 0.25s);
   opacity: 0;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.social-links #icon-github,
+#icon-linkedin, #icon-email {
+  width: clamp(36px, 5vw, 48px);
 }
