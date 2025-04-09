@@ -1,4 +1,4 @@
-![GitHub package.json version](https://img.shields.io/github/package-json/v/Adrian-Sz1/Personal-Website)
+![GitHub Tag](https://img.shields.io/github/v/tag/Adrian-Sz1/Personal-Website?label=version)
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fadrianszoszkiewicz.com)
 ![GitHub License](https://img.shields.io/github/license/Adrian-sz1/Personal-Website)
 
