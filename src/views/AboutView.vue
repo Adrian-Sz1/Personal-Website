@@ -1,11 +1,9 @@
 <script setup>
-import AboutMe from '../components/AboutMe.vue';
-
+import AboutMe from '../components/AboutMe.vue'
 </script>
 
 <template>
-  <AboutMe/>
+  <AboutMe />
 </template>
 
-<style>
-</style>
+<style scoped></style>

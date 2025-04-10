@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sortTechnologies } from '../technologyUtils';
+import { sortTechnologies } from '@/components/technologyUtils';
 
 const mockTechnologies = {
   FRAMEWORKS: { VUE: 'Vue.js', REACT: 'React' },
@@ -13,8 +13,22 @@ const mockTechnologies = {
   OTHER: { NODEJS: 'Node.js', TYPESCRIPT: 'TypeScript' },
 };
 
-describe('sortTechnologies', () => {
-
+describe('TechnologyUtils', () => {
+  describe('sortTechnologies', () => {
+    it('should be defined', () => {
+      expect(sortTechnologies).toBeDefined();
+    });
+  
+    it('should be a function', () => {
+      expect(typeof sortTechnologies).toBe('function');
+    });
+  
+    it('should return an array', () => {
+      const technologies = ['Vue.js', 'React'];
+      const sortedTechnologies = sortTechnologies(technologies, mockTechnologies);
+      expect(Array.isArray(sortedTechnologies)).toBe(true);
+    });
+  });
   it('should handle an empty array', () => {
     const technologies = [];
     const sortedTechnologies = sortTechnologies(technologies, mockTechnologies);
