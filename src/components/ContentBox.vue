@@ -1,126 +1,127 @@
 <script setup>
-import { sortTechnologies } from './technologyUtils';
-import TechnologyList from './TechnologyList.vue';
+import { sortTechnologies } from './technologyUtils'
+import TechnologyList from './TechnologyList.vue'
 const props = defineProps({
-    urlLink: {
-        type: String,
-        required: false,
-    },
-    dateRange: {
-        type: String,
-        required: false,
-    },
-    header: {
-        type: String,
-        required: true,
-    },
-    subHeader: {
-        type: String,
-        required: false,
-    },
-    desc: {
-        type: String,
-        required: true,
-    },
-    technologyList: {
-        type: Array,
-        required: false,
-        validator: (value) => value.every((item) => typeof item === 'string'),
-    },
-});
+  urlLink: {
+    type: String,
+    required: false,
+  },
+  dateRange: {
+    type: String,
+    required: false,
+  },
+  header: {
+    type: String,
+    required: true,
+  },
+  subHeader: {
+    type: String,
+    required: false,
+  },
+  desc: {
+    type: String,
+    required: true,
+  },
+  technologyList: {
+    type: Array,
+    required: false,
+    validator: (value) => value.every((item) => typeof item === 'string'),
+  },
+})
 
-const sortedTechnologyList = props.technologyList !== undefined ? sortTechnologies(props.technologyList) : [];
+const sortedTechnologyList =
+  props.technologyList !== undefined ? sortTechnologies(props.technologyList) : []
 </script>
 
 <template>
-    <div id="out-container">
-        <div id="inner-container">
-            <header id="date-container">{{ dateRange }}</header>
-            <div id="text-body-container">
-                <div id="clickable-title-container">
-                    <a :href="urlLink" target="_blank">
-                        <h2 style="font-weight: 500;">{{ header }}</h2>
-                    </a>
-                </div>
-                <h3>{{ subHeader }}</h3>
-                <p>{{ desc }}</p>
-                <TechnologyList :technologies="sortedTechnologyList" />
-            </div>
+  <div id="out-container">
+    <div id="inner-container">
+      <header id="date-container">{{ dateRange }}</header>
+      <div id="text-body-container">
+        <div id="clickable-title-container">
+          <a :href="urlLink" target="_blank">
+            <h2 style="font-weight: 500">{{ header }}</h2>
+          </a>
         </div>
+        <h3>{{ subHeader }}</h3>
+        <p>{{ desc }}</p>
+        <TechnologyList :technologies="sortedTechnologyList" />
+      </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
 @media (min-width: 1024px) {
-    #out-container {
-        max-width: 1000px;
-    }
+  #out-container {
+    max-width: 1000px;
+  }
 
-    #inner-container {
-        display: flex;
-    }
+  #inner-container {
+    display: flex;
+  }
 
-    #date-container {
-        padding-top: 0.6rem;
-        min-width: 200px;
-        display: flex;
-        text-align: justify;
-        text-justify: inter-word;
-        font-size: 14px;
-    }
+  #date-container {
+    padding-top: 0.6rem;
+    min-width: 200px;
+    display: flex;
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 14px;
+  }
 
-    h2 {
-        font-size: 1.65em;
-    }
+  h2 {
+    font-size: 1.65em;
+  }
 }
 
 #out-container {
-    display: flex;
-    flex-wrap: wrap;
-    cursor: default;
-    padding: 1rem;
-    width: 100%;
-    background-color: transparent;
-    border: 1px solid transparent;
+  display: flex;
+  flex-wrap: wrap;
+  cursor: default;
+  padding: 1rem;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid transparent;
 }
 
 #out-container:hover {
-    background-color: rgba(0, 189, 126, 0.02);
-    border: 1px solid rgba(0, 189, 126, 0.1);
-    border-radius: 5px;
+  background-color: rgba(0, 189, 126, 0.02);
+  border: 1px solid rgba(0, 189, 126, 0.1);
+  border-radius: 5px;
 }
 
 #text-body-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
 #date-container {
-    color: var(--mode-color-text);
-    letter-spacing: 0.2rem;
+  color: var(--mode-color-text);
+  letter-spacing: 0.2rem;
 }
 
 #clickable-title-container {
-    display: flex;
-    justify-content: left;
+  display: flex;
+  justify-content: left;
 }
 
 p {
-    text-align: justify;
-    text-justify: inter-word;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 h2 {
-    letter-spacing: 0.08rem;
-    font-size: 1.5em;
-    color: inherit;
+  letter-spacing: 0.08rem;
+  font-size: 1.5em;
+  color: inherit;
 }
 
 h3 {
-    line-height: 2rem;
-    color: var(--mode-color-h3-1);
-    letter-spacing: 0.06rem;
+  line-height: 2rem;
+  color: var(--mode-color-h3-1);
+  letter-spacing: 0.06rem;
 }
 </style>

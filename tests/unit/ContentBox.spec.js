@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, nextTick} from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import ContentBox from '@/components/ContentBox.vue';
 import { sortTechnologies } from '@/components/technologyUtils.js';

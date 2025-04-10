@@ -1,5 +1,5 @@
 <script setup>
-import Experience from '../components/ExperienceList.vue';
+import Experience from '../components/ExperienceList.vue'
 </script>
 
 <template>
