@@ -1,6 +1,6 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import TheParticles from '@/components/TheParticles.vue'
+import TheParticles from './components/TheParticles.vue'
 import NavBar from './components/NavBar.vue'
 import UnderConstructionView from './components/UnderConstructionView.vue'
 
