@@ -1,15 +1,14 @@
 <script setup>
-import { ref } from 'vue';
-import IconGithub from './icons/IconGithub.vue';
-import IconLinkedIn from './icons/IconLinkedIn.vue';
+import { ref } from 'vue'
+import IconGithub from './icons/IconGithub.vue'
+import IconLinkedIn from './icons/IconLinkedIn.vue'
 
-
-const showSocial = ref(true);
+const showSocial = ref(true)
 const socialLinks = ref({
-  linkedin: "https://www.linkedin.com/in/adrian-szoszkiewicz-901136259",
-  github: "https://github.com/Adrian-Sz1",
-});
-const contactEmail = ref("adrianszoszkiewicz@gmail.com");
+  linkedin: 'https://www.linkedin.com/in/adrian-szoszkiewicz-901136259',
+  github: 'https://github.com/Adrian-Sz1',
+})
+const contactEmail = ref('adrianszoszkiewicz@gmail.com')
 </script>
 <template>
   <div class="construction-page">
@@ -26,8 +25,10 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
           <IconGithub id="icon-github" class="svg-icon-link" />
         </a>
       </div>
-      <p class="contact" v-if="contactEmail">For any queries or questions contact: <a
-          :href="'mailto:' + contactEmail">{{ contactEmail }}</a></p>
+      <p class="contact" v-if="contactEmail">
+        For any queries or questions contact:
+        <a :href="'mailto:' + contactEmail">{{ contactEmail }}</a>
+      </p>
     </div>
   </div>
 </template>
@@ -77,5 +78,4 @@ p {
 .contact a {
   display: inline;
 }
-
 </style>

@@ -1,47 +1,55 @@
 <script setup>
-import { ref } from 'vue';
-import { RouterLink } from 'vue-router';
-const pdfUrl = '/Adrian_Szoszkiewicz_CV_2025.pdf';
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+const pdfUrl = '/Adrian_Szoszkiewicz_CV_2025.pdf'
 
-const isMenuOpen = ref(false);
+const isMenuOpen = ref(false)
 
 const toggleMenu = () => {
-  isMenuOpen.value = !isMenuOpen.value;
-};
+  isMenuOpen.value = !isMenuOpen.value
+}
 
 const closeMenu = () => {
-  isMenuOpen.value = false;
-};
-
+  isMenuOpen.value = false
+}
 
 const downloadPdf = () => {
-  const link = document.createElement('a');
-  link.href = pdfUrl;
-  link.download = 'Adrian-Szoszkiewicz-CV-2025.pdf';
-  link.click();
-};
+  const link = document.createElement('a')
+  link.href = pdfUrl
+  link.download = 'Adrian-Szoszkiewicz-CV-2025.pdf'
+  link.click()
+}
 const handleDownload = () => {
-  closeMenu();
-  downloadPdf();
-};
-
+  closeMenu()
+  downloadPdf()
+}
 </script>
 
 <template>
   <nav data-testid="navbar">
     <RouterLink id="home-pic-link" data-testid="logo-link" to="/" @click="closeMenu">
-      <img data-testid="logo-img" alt="logo" class="logo" src="/Main_Logo.png"/>
+      <img data-testid="logo-img" alt="logo" class="logo" src="/Main_Logo.png" />
     </RouterLink>
     <button data-testid="hamburger-button" class="hamburger" @click="toggleMenu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <ul id="nav-links-container" data-testid="navbar-link-container" :class="{ 'open': isMenuOpen }">
+    <ul id="nav-links-container" data-testid="navbar-link-container" :class="{ open: isMenuOpen }">
       <li><RouterLink data-testid="home-link" to="/" @click="closeMenu">Home</RouterLink></li>
-      <li><RouterLink data-testid="about-link" to="/about" @click="closeMenu">About</RouterLink></li>
-      <li><RouterLink data-testid="experience-link" to="/experience" @click="closeMenu">Experience</RouterLink></li>
-      <li><RouterLink data-testid="projects-link" to="/projects" @click="closeMenu">Projects</RouterLink></li>
+      <li>
+        <RouterLink data-testid="about-link" to="/about" @click="closeMenu">About</RouterLink>
+      </li>
+      <li>
+        <RouterLink data-testid="experience-link" to="/experience" @click="closeMenu"
+          >Experience</RouterLink
+        >
+      </li>
+      <li>
+        <RouterLink data-testid="projects-link" to="/projects" @click="closeMenu"
+          >Projects</RouterLink
+        >
+      </li>
       <li><a data-testid="download-cv-link" @click="handleDownload">Download CV</a></li>
     </ul>
   </nav>
@@ -49,8 +57,7 @@ const handleDownload = () => {
 
 <style scoped>
 #home-pic-link {
- display: flex;
- 
+  display: flex;
 }
 #home-pic-link.router-link-exact-active:hover {
   background-color: transparent;
@@ -154,7 +161,7 @@ nav a.router-link-exact-active:hover {
     z-index: 1;
     background-color: rgba(0, 0, 0, 0.85);
     margin: 0;
-    backdrop-filter: blur(5px); 
+    backdrop-filter: blur(5px);
     opacity: 0;
     transition: all 0.25s ease-in-out;
   }

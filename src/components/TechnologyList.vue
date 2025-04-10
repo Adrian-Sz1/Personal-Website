@@ -5,17 +5,17 @@ const props = defineProps({
     required: true,
     validator: (value) => {
       if (!Array.isArray(value)) {
-        return false;
+        return false
       }
-      return value.every((item) => typeof item === 'string');
+      return value.every((item) => typeof item === 'string')
     },
   },
-});
+})
 </script>
 
 <template>
   <ul id="skills-container">
-    <li class="mint-pill-medium" v-for="technology in technologies" :key="technology">
+    <li class="mint-pill-medium" v-for="technology in props.technologies" :key="technology">
       {{ technology }}
     </li>
   </ul>
@@ -23,27 +23,27 @@ const props = defineProps({
 
 <style scoped>
 #out-skills-container {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 ul {
-    padding: 0;
+  padding: 0;
 }
 
 li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    padding: 0 10px 0 10px;
-    margin: 0.35rem;
-    margin-left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 0 10px 0 10px;
+  margin: 0.35rem;
+  margin-left: 0;
 }
 
 #skills-container {
-    list-style-type: none;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
+  list-style-type: none;
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
 }
 </style>

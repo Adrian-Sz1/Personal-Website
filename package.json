@@ -1,6 +1,6 @@
 {
   "name": "personal-website",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
+    "test:all": "npm run test:unit -- --run && npm run test:e2e",
     "lint": "eslint . --fix",
     "format": "prettier --write src/"
   },
