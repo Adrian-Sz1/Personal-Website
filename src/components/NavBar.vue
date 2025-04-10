@@ -58,9 +58,9 @@ const handleDownload = () => {
 <style scoped>
 #home-pic-link {
   display: flex;
+  margin: 0;
 }
 #home-pic-link.router-link-exact-active:hover {
-  background-color: transparent;
   cursor: pointer;
 }
 nav {
@@ -108,12 +108,8 @@ nav {
   align-items: center;
   justify-content: flex-end;
   flex-grow: 1;
-  margin-left: 20px;
   z-index: 9;
-}
-
-#nav-links-container li {
-  margin-left: 1rem;
+  height: 70px;
 }
 
 nav a {
@@ -122,6 +118,7 @@ nav a {
   margin: 0.5rem 1rem;
   font-weight: bold;
   color: var(--mode-color-text);
+  margin: 1rem;
 }
 
 nav a:hover {
@@ -136,6 +133,9 @@ nav a.router-link-exact-active {
 nav a.router-link-exact-active:hover {
   background-color: transparent;
   cursor: default;
+}
+#nav-links-container li {
+  margin: 0 0.75rem;
 }
 
 @media only screen and (max-width: 726px) {
@@ -164,6 +164,8 @@ nav a.router-link-exact-active:hover {
     backdrop-filter: blur(5px);
     opacity: 0;
     transition: all 0.25s ease-in-out;
+    height: auto;
+    padding: 0;
   }
 
   #nav-links-container.open {
@@ -171,6 +173,7 @@ nav a.router-link-exact-active:hover {
     visibility: visible;
     left: 0;
     opacity: 1;
+    backdrop-filter: blur(3px);
   }
 
   #nav-links-container li {
@@ -182,7 +185,7 @@ nav a.router-link-exact-active:hover {
   }
 
   nav a {
-    padding: 1rem;
+    padding: 0.35rem;
   }
 }
 </style>
