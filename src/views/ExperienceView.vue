@@ -1,10 +1,9 @@
 <script setup>
-import Experience from '../components/ExperienceList.vue';
+import Experience from '../components/ExperienceList.vue'
 </script>
 
 <template>
-  <Experience/>
+  <Experience />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

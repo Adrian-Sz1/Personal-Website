@@ -1,15 +1,14 @@
 <script setup>
-import { ref } from 'vue';
-import IconGithub from './icons/IconGithub.vue';
-import IconLinkedIn from './icons/IconLinkedIn.vue';
+import { ref } from 'vue'
+import IconGithub from './icons/IconGithub.vue'
+import IconLinkedIn from './icons/IconLinkedIn.vue'
 
-
-const showSocial = ref(true);
+const showSocial = ref(true)
 const socialLinks = ref({
-  linkedin: "https://www.linkedin.com/in/adrian-szoszkiewicz-901136259",
-  github: "https://github.com/Adrian-Sz1",
-});
-const contactEmail = ref("adrianszoszkiewicz@gmail.com");
+  linkedin: 'https://www.linkedin.com/in/adrian-szoszkiewicz-901136259',
+  github: 'https://github.com/Adrian-Sz1',
+})
+const contactEmail = ref('adrianszoszkiewicz@gmail.com')
 </script>
 <template>
   <div class="construction-page">
@@ -26,19 +25,16 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
           <IconGithub id="icon-github" class="svg-icon-link" />
         </a>
       </div>
-      <p class="contact" v-if="contactEmail">For any queries or questions contact: <a
-          :href="'mailto:' + contactEmail">{{ contactEmail }}</a></p>
+      <p class="contact" v-if="contactEmail">
+        For any queries or questions contact:
+        <a :href="'mailto:' + contactEmail">{{ contactEmail }}</a>
+      </p>
     </div>
   </div>
 </template>
 <style scoped>
 * {
   z-index: 1;
-}
-
-.social-links #icon-github,
-#icon-linkedin {
-  width: clamp(36px, 5vw, 48px);
 }
 
 #crane-img {
@@ -59,20 +55,18 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
 }
 
 h1 {
+  text-align: center;
   font-size: 2.5em;
   margin-bottom: 20px;
   color: var(--mode-color-a-1);
+  font-weight: normal;
 }
 
 p {
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
-  line-height: 1.5;
   margin: 1rem 0;
-  color: var(--mode-color-text);
 }
 
 .social-links {
-  display: flex;
   justify-content: center;
   margin-top: 20px;
 }
@@ -81,17 +75,7 @@ p {
   margin: 0 10px;
 }
 
-.social-links img {
-  width: 30px;
-  height: 30px;
-}
-
 .contact a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.contact a:hover {
-  text-decoration: underline;
+  display: inline;
 }
 </style>

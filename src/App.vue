@@ -1,19 +1,16 @@
 <script setup>
 import { RouterView } from 'vue-router'
-import Particles from './components/Particles.vue';
-import NavBar from './components/NavBar.vue';
-import UnderConstructionView from './components/UnderConstructionView.vue';
+import TheParticles from './components/TheParticles.vue'
+import NavBar from './components/NavBar.vue'
+import UnderConstructionView from './components/UnderConstructionView.vue'
 
-const isUnderConstruction = import.meta.env.VITE_APP_UNDER_CONSTRUCTION === 'true';
+const isUnderConstruction = import.meta.env.VITE_APP_UNDER_CONSTRUCTION === 'true'
 
-isUnderConstruction ? import('./components/UnderConstructionView.vue') : null;
-
-
-console.log('Under construction:', isUnderConstruction);
+isUnderConstruction ? import('./components/UnderConstructionView.vue') : null
 </script>
 
 <template>
-  <Particles />
+  <TheParticles />
   <div v-if="!isUnderConstruction">
     <NavBar />
     <div id="view">
