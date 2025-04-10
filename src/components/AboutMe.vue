@@ -20,15 +20,16 @@ onMounted(() => {
           "Build with purpose. Ship with pride."
         </h2>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 5">
-          It all started back in secondary school, when I was making silly little games for fun —
-          nothing groundbreaking, but enough to completely hook me. There was something fascinating
-          about writing a bunch of instructions and watching the computer follow them. That simple
-          idea lit the spark that's kept me chasing better, smarter software ever since.
+          It all started back in secondary school, when I was making silly little games for fun in
+          my spare time, it wasn't all that groundbreaking but enough to completely hook me. There
+          was something fascinating about writing a bunch of lines of code and watching the computer
+          follow them. That simple idea lit the spark that's kept me chasing better, smarter
+          software ever since.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 7">
           My journey in software engineering gained significant momentum during my placement year
           prior to my graduation in the summer of 2024. During it, I gained invaluable experience
-          working with .NET, KnockoutJS, and key aspects of an agile workflow. Experiencing
+          working with ASP.NET, KnockoutJS, and key aspects of an agile workflow. Experiencing
           real-world development for the first time and seeing how my work contributed to the bigger
           picture made a lasting impact and I've carried this since for every one of my projects -
           with intention and desire to deliver something I can be proud of.
@@ -39,14 +40,13 @@ onMounted(() => {
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 13">
           My portfolio is a reflection of that mindset. From responsive frontends built with Vue and
           React, to backend services in Python, Java, and ASP.NET, each project has taught me
-          something new. I've worked with MongoDB, Microsoft SQL Server, Docker, Nginx, Google Cloud
-          Run, and used GitHub Actions for CI/CD automation — all tools in service of shipping
-          meaningful software.
+          something new. I've also worked with MongoDB, Microsoft SQL Server, Docker, Nginx, Google
+          Cloud Run, and used GitHub Actions for CI/CD automation in an effort to ship meaningful
+          software and broaden my skillset.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 15">
-          As a result, I view each project — including all the silly little games I started out with
-          — and my time at NantHealth, as a crucial step in my ongoing journey to becoming a
-          well-rounded and effective software engineer.
+          As a result, I view each project including all the silly little games I started out with
+          and my time at NantHealth, as a crucial step in my ongoing software engineering journey.
         </p>
         <p :class="showAnimation ? 'fade-in-fast' : ''" style="--order: 17">
           When programming isn't on the menu though, I enjoy bouldering, staying active and
@@ -63,7 +63,9 @@ hr {
   height: 400px;
   min-height: 100%;
 }
-
+h2 {
+  font-style: italic;
+}
 #about-me-container {
   margin-top: 100px;
   flex-direction: row;
