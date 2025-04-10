@@ -1,6 +1,6 @@
 <script setup>
 const particlesLoaded = async container => {
-    console.log("Particles container loaded", container);
+    // console.log("Particles container loaded", container);
 };
 
 const particlesOptions = {

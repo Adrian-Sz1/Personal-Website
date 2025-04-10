@@ -8,8 +8,6 @@ const isUnderConstruction = import.meta.env.VITE_APP_UNDER_CONSTRUCTION === 'tru
 
 isUnderConstruction ? import('./components/UnderConstructionView.vue') : null;
 
-
-console.log('Under construction:', isUnderConstruction);
 </script>
 
 <template>

@@ -36,11 +36,6 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
   z-index: 1;
 }
 
-.social-links #icon-github,
-#icon-linkedin {
-  width: clamp(36px, 5vw, 48px);
-}
-
 #crane-img {
   width: 150px;
   height: 150px;
@@ -59,20 +54,18 @@ const contactEmail = ref("adrianszoszkiewicz@gmail.com");
 }
 
 h1 {
+  text-align: center;
   font-size: 2.5em;
   margin-bottom: 20px;
   color: var(--mode-color-a-1);
+  font-weight: normal;
 }
 
 p {
-  font-size: clamp(0.8rem, 2.5vw, 1rem);
-  line-height: 1.5;
   margin: 1rem 0;
-  color: var(--mode-color-text);
 }
 
 .social-links {
-  display: flex;
   justify-content: center;
   margin-top: 20px;
 }
@@ -81,17 +74,8 @@ p {
   margin: 0 10px;
 }
 
-.social-links img {
-  width: 30px;
-  height: 30px;
-}
-
 .contact a {
-  color: #007bff;
-  text-decoration: none;
+  display: inline;
 }
 
-.contact a:hover {
-  text-decoration: underline;
-}
 </style>
