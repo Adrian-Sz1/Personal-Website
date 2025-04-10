@@ -28,21 +28,21 @@ const handleDownload = () => {
 </script>
 
 <template>
-  <nav>
-    <RouterLink id="home-pic-link" to="/" @click="closeMenu">
-      <img alt="logo" class="logo" src="/Main_Logo.png"/>
+  <nav data-testid="navbar">
+    <RouterLink id="home-pic-link" data-testid="logo-link" to="/" @click="closeMenu">
+      <img data-testid="logo-img" alt="logo" class="logo" src="/Main_Logo.png"/>
     </RouterLink>
-    <button class="hamburger" @click="toggleMenu">
+    <button data-testid="hamburger-button" class="hamburger" @click="toggleMenu">
       <span class="bar"></span>
       <span class="bar"></span>
       <span class="bar"></span>
     </button>
-    <ul id="nav-links-container" :class="{ 'open': isMenuOpen }">
-      <li><RouterLink to="/" @click="closeMenu">Home</RouterLink></li>
-      <li><RouterLink to="/about" @click="closeMenu">About</RouterLink></li>
-      <li><RouterLink to="/experience" @click="closeMenu">Experience</RouterLink></li>
-      <li><RouterLink to="/projects" @click="closeMenu">Projects</RouterLink></li>
-      <li><a @click="handleDownload">Download CV</a></li>
+    <ul id="nav-links-container" data-testid="navbar-link-container" :class="{ 'open': isMenuOpen }">
+      <li><RouterLink data-testid="home-link" to="/" @click="closeMenu">Home</RouterLink></li>
+      <li><RouterLink data-testid="about-link" to="/about" @click="closeMenu">About</RouterLink></li>
+      <li><RouterLink data-testid="experience-link" to="/experience" @click="closeMenu">Experience</RouterLink></li>
+      <li><RouterLink data-testid="projects-link" to="/projects" @click="closeMenu">Projects</RouterLink></li>
+      <li><a data-testid="download-cv-link" @click="handleDownload">Download CV</a></li>
     </ul>
   </nav>
 </template>

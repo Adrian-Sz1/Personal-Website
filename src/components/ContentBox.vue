@@ -1,6 +1,6 @@
 <script setup>
 import { sortTechnologies } from './technologyUtils';
-
+import TechnologyList from './TechnologyList.vue';
 const props = defineProps({
     urlLink: {
         type: String,
@@ -44,13 +44,7 @@ const sortedTechnologyList = props.technologyList !== undefined ? sortTechnologi
                 </div>
                 <h3>{{ subHeader }}</h3>
                 <p>{{ desc }}</p>
-                <div id="out-skills-container">
-                    <ul id="skills-container">
-                        <li class="mint-pill-medium" v-for="technology in sortedTechnologyList" :key="technology">
-                            {{ technology }}
-                        </li>
-                    </ul>
-                </div>
+                <TechnologyList :technologies="sortedTechnologyList" />
             </div>
         </div>
     </div>
@@ -139,30 +133,5 @@ h3 {
     line-height: 2rem;
     color: var(--mode-color-h3-1);
     letter-spacing: 0.06rem;
-}
-
-#out-skills-container {
-    flex-grow: 1;
-}
-
-ul {
-    padding: 0;
-}
-
-li {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 20px;
-    padding: 0 10px 0 10px;
-    margin: 0.35rem;
-    margin-left: 0;
-}
-
-#skills-container {
-    list-style-type: none;
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
 }
 </style>
